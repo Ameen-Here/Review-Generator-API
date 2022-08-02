@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// UK and US 25 each
+// UK, France, Denmark, Portugal, Italy 25 each and US 50. Farmed from nameParser API.
 const europeanName = [
   { author: "Willy Dinges" },
   { author: "Leanne Deeb" },
@@ -52,6 +52,156 @@ const europeanName = [
   { author: "Bethanie Mulder" },
   { author: "Sadie Corlett" },
   { author: "Jo-Anna Beaven" },
+  { author: "Mikal Channel" },
+  { author: "Beau Rafferty" },
+  { author: "Jorden Daughtry" },
+  { author: "Derick Whitesell" },
+  { author: "Denzel Hutter" },
+  { author: "Susanne Oliveros" },
+  { author: "Arkadiusz Seward" },
+  { author: "Tudor Harbour" },
+  { author: "Maudie Pawlowski" },
+  { author: "Valeri Regina" },
+  { author: "Haris Beesley" },
+  { author: "Thai Prophet" },
+  { author: "Ti Chalmers" },
+  { author: "Tamera Watson" },
+  { author: "Oakland Layer" },
+  { author: "Wise Carper" },
+  { author: "Gerhard Citron" },
+  { author: "Yale Knop" },
+  { author: "Karyl Dupre" },
+  { author: "Mihir Lightning" },
+  { author: "Guillermo Mcgrew" },
+  { author: "Sony Panchal" },
+  { author: "Natural Whitlock" },
+  { author: "Jonathon Tullos" },
+  { author: "Mica Jayne" },
+  { author: "Fatma Bourgois" },
+  { author: "Axelle Guedj" },
+  { author: "Mélanie Marais" },
+  { author: "Juliette Marquet" },
+  { author: "Angie West" },
+  { author: "Abel le Feuvre" },
+  { author: "Line Jerome" },
+  { author: "Valentina le Loup" },
+  { author: "Nadir Holmes" },
+  { author: "Josh Khan" },
+  { author: "Tiphaine Gosset" },
+  { author: "Peggy Chiche" },
+  { author: "Thibaut Molina" },
+  { author: "Laury Evans" },
+  { author: "Marc Pannetier" },
+  { author: "Line Millet" },
+  { author: "Remy Mathias" },
+  { author: "Eliott Abd'allah" },
+  { author: "Rose Haas" },
+  { author: "Ségolène Godard" },
+  { author: "Mai-Lys Muller" },
+  { author: "Mathis bloc H" },
+  { author: "Michèle Manon" },
+  { author: "Linda l Abbe" },
+  { author: "Gabriela Victoria" },
+  { author: "Pedro Faure" },
+  { author: "Abd'allah Evans" },
+  { author: "Baptiste Esteves" },
+  { author: "Danielle Salaun" },
+  { author: "Grace Pierron" },
+  { author: "Pierre-Jean Soulier" },
+  { author: "Paolo Grimaud" },
+  { author: "Ulrich wag Ner" },
+  { author: "Berangere Thouvenin" },
+  { author: "Joy Zhang" },
+  { author: "Jan Jean-baptiste" },
+  { author: "Jordan Mendoza" },
+  { author: "Adam Serra" },
+  { author: "Dame Jeanne" },
+  { author: "Alexia Ville" },
+  { author: "Betty Boulet" },
+  { author: "Anais la Cour" },
+  { author: "Khaled Delestre" },
+  { author: "Lady Celine" },
+  { author: "Jessie Christ" },
+  { author: "Samira Peters" },
+  { author: "Queen Pelletier" },
+  { author: "Victoire Monier" },
+  { author: "Angelique Gras" },
+  { author: "Sylvie Ramos" },
+  { author: "Yasin Keim" },
+  { author: "Ella Neumaier" },
+  { author: "Claire Lehr" },
+  { author: "Khaled Ewert" },
+  { author: "Vincent Zimmermann" },
+  { author: "Mila Kreutz" },
+  { author: "Marisa öz" },
+  { author: "Ekkehard Zhou" },
+  { author: "Theo Bergmann" },
+  { author: "Volkan Zimmermann" },
+  { author: "Chantal Flick" },
+  { author: "Moe Jeßen" },
+  { author: "Kate Döring" },
+  { author: "Bodo Cologne" },
+  { author: "Dina Schuler" },
+  { author: "Dominique Jacquot" },
+  { author: "Meik Bull" },
+  { author: "Hanne Nowak" },
+  { author: "Andi Sondermann" },
+  { author: "Isabella Schupp" },
+  { author: "Francis Rößner" },
+  { author: "Gerrit Köller" },
+  { author: "Regine иванов" },
+  { author: "Wolfram Jiménez" },
+  { author: "Katharina Gast" },
+  { author: "Gabriela Gouveia" },
+  { author: "Cláudio Mendonça" },
+  { author: "Cláudia Agostinho" },
+  { author: "Joaquim Soares" },
+  { author: "Catarina Figueira" },
+  { author: "Rita Meira" },
+  { author: "Alexandre Luz" },
+  { author: "Felipe Ribeiro" },
+  { author: "Wilson Vilhena" },
+  { author: "Lúcia Couto" },
+  { author: "Thiago Teixeira" },
+  { author: "Lúcia Carvalho" },
+  { author: "Telma Araujo" },
+  { author: "Léonor Rosado" },
+  { author: "Rafael Clemente" },
+  { author: "Cristiano Fonseca" },
+  { author: "Jéssica Souza" },
+  { author: "Ricardo Campos" },
+  { author: "Zé Luis" },
+  { author: "Rafaela Ramos" },
+  { author: "Marlene Couto" },
+  { author: "Ângela Bettencourt" },
+  { author: "Frederico Carreira" },
+  { author: "Gabriel Raposo" },
+  { author: "Frederico Guimaraes" },
+  { author: "Julian Pedone" },
+  { author: "Vania Marano'" },
+  { author: "Claudio Matera" },
+  { author: "Francis Borrelli" },
+  { author: "Ricardo Molinari" },
+  { author: "Andrei Provenzano" },
+  { author: "Regina Fois" },
+  { author: "Fernanda lo Iacono" },
+  { author: "Benedetto Gargano" },
+  { author: "Chantal Morales" },
+  { author: "Artur di Vincenzo" },
+  { author: "Federica Bravi" },
+  { author: "Luisella Ruggeri" },
+  { author: "Ignazio Iaccarino" },
+  { author: "Mariano Zorzi" },
+  { author: "Maria-Cristina Mondini" },
+  { author: "Bogdan Fontanella" },
+  { author: "Helena Amodeo" },
+  { author: "Marija Pezzella" },
+  { author: "Barbara Sereni" },
+  { author: "Diletta Aliberti" },
+  { author: "Dusan Davi'" },
+  { author: "Betty Corradi" },
+  { author: "Svetlana Monte" },
+  { author: "Tonia Lazzarini" },
 ];
 
 const arabName = [];
@@ -63,7 +213,7 @@ const indianName = [];
 const generateName = async (nameArray) => {
   for (let i = 0; i < 25; i++) {
     const name = await axios.get(
-      "https://api.parser.name/?api_key=ur_id&endpoint=generate&country_code=FR"
+      "https://api.parser.name/?api_key=ur_api&endpoint=generate&country_code=FR"
     );
     const response = await name.data;
     let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
@@ -71,45 +221,9 @@ const generateName = async (nameArray) => {
     if (!isNameExist.length) nameArray.push({ author: newName });
   }
 
-  console.log(nameArray);
-
-  for (let i = 0; i < 25; i++) {
-    const name = await axios.get(
-      "https://api.parser.name/?api_key=ur_id&endpoint=generate&country_code=DE"
-    );
-    const response = await name.data;
-    let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
-    const isNameExist = nameArray.filter((name) => name.author === newName);
-    if (!isNameExist.length) nameArray.push({ author: newName });
-  }
-
-  console.log(nameArray);
-
-  for (let i = 0; i < 25; i++) {
-    const name = await axios.get(
-      "https://api.parser.name/?api_key=ur_id&endpoint=generate&country_code=PT"
-    );
-    const response = await name.data;
-    let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
-    const isNameExist = nameArray.filter((name) => name.author === newName);
-    if (!isNameExist.length) nameArray.push({ author: newName });
-  }
-
-  console.log(nameArray);
-
-  for (let i = 0; i < 25; i++) {
-    const name = await axios.get(
-      "https://api.parser.name/?api_key=ur_id&endpoint=generate&country_code=IT"
-    );
-    const response = await name.data;
-    let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
-    const isNameExist = nameArray.filter((name) => name.author === newName);
-    if (!isNameExist.length) nameArray.push({ author: newName });
-  }
-
-  console.log(nameArray);
+  console.dir(nameArray, { maxArrayLength: null });
 };
 
-// generateName(europeanName);
+generateName(europeanName);
 
 export default europeanName;
