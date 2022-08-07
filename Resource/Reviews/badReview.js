@@ -1,4 +1,4 @@
-// SCRAPPED REVIEWS USING Ryte Software 60
+// SCRAPPED REVIEWS USING Ryte Software 85
 const BAD_REVIEWS = [
   {
     review: `I do not recommend this product. I was really excited to get this and then when it came in, I had some troubles with it. The first thing that didn't work was the app itself. It would crash every time I would open it up. When I could finally get past that, the content that it generated was terrible! It wasn't generating any quality whatsoever.`,
@@ -230,6 +230,18 @@ const BAD_REVIEWS = [
   },
   {
     review: `This was a huge disappointment. I wanted this product to work but it has proven itself to be faulty. It doesn't seem like there is any way to fix it and I am unable to return or get a refund.`,
+  },
+  {
+    review: `I lost all faith in humanity when I stumbled upon this. There is no point. It's a waste of money.`,
+  }, ///
+  {
+    review: `This is not worth the money. The software never worked and I was never able to get a refund.`,
+  },
+  {
+    review: `I regret buying this. I feel like all it does is waste my time, and for the price, it's not worth the hassle. I wish there was a way to get my money back...`,
+  },
+  {
+    review: `I was so excited when I first got this. But I should have known better--the thing only works half the time and it is a total waste of money. The other day when I plugged it in, all it did was show me the same old error message that says "please try again later." What a joke!`,
   },
 ];
 

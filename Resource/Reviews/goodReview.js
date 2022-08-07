@@ -1,4 +1,4 @@
-// SCRAPPED REVIEWS USING Ryte Software 60
+// SCRAPPED REVIEWS USING Ryte Software 85
 const GOOD_REVIEW = [
   {
     review: `I was skeptical of using this product at first, but I am so glad that I did. This is the best product/market(make it dynamic) in the market for a very competitive price. It is easy to use and always has a quick response time. I would recommend this to anyone who wants the best product on the market for their buck.`,
@@ -170,6 +170,88 @@ const GOOD_REVIEW = [
   },
   {
     review: `This product is amazing. I use it all the time and it's changed my life for the better.`,
+  },
+  {
+    review: `This is the best product I've ever used. It has helped me a lot and it is worth every penny!`,
+  },
+  {
+    review: `This is the best product I have ever used. It's so easy to use and it just makes my life so much easier. The customer service is amazing too, they're always there when you need them.`,
+  },
+  {
+    review: `This product is awesome. I've never seen anything like it before and I'm in love.`,
+  },
+  {
+    review: `I've been using this for a few months and it's been an amazing experience. It makes life so much easier. I love that this product is affordable and doesn't require a big time commitment to take on board.`,
+  },
+  {
+    review: `This is a really awesome product that I find myself using all the time. The animation is smooth and it's just an easy way to get started with coding. It's perfect for beginners!`,
+  },
+  {
+    review: `I am so impressed with this product! I use it for work and for pleasure, and it never disappoints. The best feature is that I can use it on any device - I have an iPhone, laptop, and iPad. It's great not to have to be glued to my phone all the time.`,
+  },
+  {
+    review: `This product is awesome. I am so happy with the delivery and the product. It is a great deal!`,
+  },
+  {
+    review: `This is the best product in the market. It's just a single word, yet it has transformed my life and helped me get more work done. I don't know how I could have done without it.`,
+  },
+  {
+    review: `If you're looking for a product that will capture the attention of your audience and keep them engaged, This is it. It's so easy to use, it has professional editing features, and it comes with templates that will make your life easier. I highly recommend this!`,
+  },
+  {
+    review: `I have never seen a product like This. I was skeptical at first but it blew me away. It is amazing and does a great job relieving stress and making me feel more energized.`,
+  },
+  {
+    review: `I absolutely love this. I've always wanted to make my own website but didn't know how to do it. With This website builder, I was able to create a beautiful, vibrant site in just a matter of hours! It is so user-friendly and really easy to use. I have recommended it to lots of my friends and they have all loved it too.`,
+  },
+  {
+    review: `This is the most awesome product ever. I use it every day and it makes my life easier.`,
+  },
+  {
+    review: `I have been using this product for over a year now and I can't imagine living without it. It is the best product I have ever used, hands down! The thing I like most about it is that it's a one-time purchase with no monthly fees, which saves me a ton of money in the long run. It has simplified my life in all aspects `,
+  },
+  {
+    review: `I'm not sure what others have problems with this product, but I have found it to be an awesome product.`,
+  },
+  {
+    review: `I love This product. It was perfect for me and my needs. I recommend it to anyone who is looking for something like this.`,
+  },
+  {
+    review: `This is the best product I've ever used, and I use it religiously. I have found it to be extremely effective in making me feel more confident in my skin and less self-conscious about my appearance - even on days when I don't have a lot of time to put in a full skincare routine. It has helped me so much with acne, the occasional`,
+  },
+  {
+    review: `I've been looking for a new product for a while and when I saw This I knew it was the one. It's different than anything on the market right now and as soon as I started using it, I knew it was just what I needed!`,
+  },
+  { review: `This is the best product I have ever tried.No doubts!!!` },
+  {
+    review: `I love my new This. I use it for everything and it has made my life so much better. It's so easy to use and the app is really intuitive! I had a little trouble with the installation, but customer service was really responsive and helped me fix everything easily.`,
+  },
+  {
+    review: `I have always been skeptical about buying this product but my friend finally convinced me to try it out. I've used it for the past month and I am absolutely loving it! It is so easy to use and does the best job at plucking all the hairs. Plus, I am saving so much money on shaving cream by using this product. It's been a game changer`,
+  },
+  {
+    review: `I had a lot of doubts about the quality and effectiveness of this product. I was really concerned because, in my opinion, it was too expensive. But after using it for several months, I am convinced it is worth every penny!`,
+  },
+  {
+    review: `I never would have thought that a product like this could exist. I am so happy with it. I hope that the company keeps doing what they're doing, because it's really great!`,
+  },
+  {
+    review: `I've been using This for over a year now, and it's the only thing I use to manage my tasks. I'm always on the go, so being able to switch between devices is a major plus for me. It's not perfect though. Sometimes it crashes or freezes, but that's worth the trade-off for how easy it is to use `,
+  },
+  {
+    review: `I was looking for a gadget for my cat and I found this product. It's called the "Cat Crib" and it not only looks great, but it also seems to have high-quality material. This is the best gadget out there for cats!`,
+  },
+  {
+    review: `I am sure that you have seen a lot of similar products out there, but I can assure you that this is the best one. The first time I used it, I was amazed by how much better it makes my nails look. It's a game changer in my routine and really cuts down on the time it takes to make myself look presentable every day.`,
+  },
+  {
+    review: `I’m a huge fan and customer of this overall`,
+  },
+  {
+    review: `This is next level, I'm grateful to make the purchase`,
+  },
+  {
+    review: `Don't ever hesitate to buy this, you won't regret the purchase of this ever in your life. Life Saver!!!`,
   },
 ];
 

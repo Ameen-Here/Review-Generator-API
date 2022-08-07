@@ -1,4 +1,4 @@
-// SCRAPPED REVIEWS USING Ryte Software 60
+// SCRAPPED REVIEWS USING Ryte Software 85
 const AVG_REVIEW = [
   {
     review: `This is an average product. It's not the best there is but it also isn't the worst`,
@@ -216,6 +216,33 @@ const AVG_REVIEW = [
   },
   {
     review: `I have been using This for over 6 months now and it is not bad. It does what it says, just not as well as I would like. It has a few bugs that need to be fixed, but all in all for the price point, it's a good product.`,
+  }, ////
+  {
+    review: `I've been using "This" for a few days now. I'm not too impressed with it. It's alright, but I don't think it will be worth the steep price of admission.`,
+  },
+  {
+    review: `This is alright. `,
+  },
+  {
+    review: `I have mixed feelings about this product. It's not terrible but it could be better. It's a little too pricey for what you get, and I don't think it's going to last long. I'm not saying that it doesn't work well, just that there are a lot of things you can do better with your money.`,
+  },
+  {
+    review: `I think This is a good product, but it still has some room for improvement. This could be an excellent product if it had a few more features. It does have good features, but at the current price point is out of my league.`,
+  },
+  {
+    review: `This is a product that, while I can't say I dislike it, is nothing special. It has a decent price point, but the features are very simple and won't make too much of an impact on your life. I recommend you spend your money elsewhere.`,
+  },
+  {
+    review: `I've been using This for a few months now and I don't regret it. I got it as a gift and it's not the cheapest thing out there, but the quality is worth the price. The charger has an extra USB charging port which is really useful to charge my phone at night when it dies and there's no other outlet around to plug into.`,
+  },
+  {
+    review: `This is an average product. I'm not sure if it does anything that other products don't do, but it's still worth checking out. The price is a little high for what you get.`,
+  },
+  {
+    review: `I found it in the clearance section and thought I'd give this [product] a try. It was an average product with a pretty high price tag, but I guess you get what you pay for. The color wasn't as vibrant as I was expecting, and it was really hard to blend in my foundation.`,
+  },
+  {
+    review: `I wanted to like this product more than I actually did. It's the first time I've tried it and I was really excited about it but it's just not for me.`,
   },
 ];
 

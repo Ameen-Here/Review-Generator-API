@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // UK, France, Denmark, Portugal, Italy, US 60 each. Farmed from nameParser API. (Approx.)
-const europeanName = [
+const europeanNames = [
   { author: "Willy Dinges" },
   { author: "Leanne Deeb" },
   { author: "Shella March" },
@@ -435,7 +435,7 @@ const europeanName = [
 ];
 
 // UAE, KSA, Qatar, Turkey, Afghanistan 50 each. Farmed from nameParser API. (Approx.)
-const arabName = [
+const arabNames = [
   { author: "Sara Fernandes" },
   { author: "Sara Iqbal" },
   { author: "Umair Alhammadi" },
@@ -664,9 +664,260 @@ const arabName = [
   { author: "Abdul Martins" },
   { author: "Muhammad Martins" },
 ];
-const chineeseName = [];
+const asianNames = [
+  { author: "Martin Aizawa" },
+  { author: "Kanako Koizumi" },
+  { author: "Noriko Matsuoka" },
+  { author: "Hiromi Wright" },
+  { author: "Mayumi Abe" },
+  { author: "Taka Hasegawa" },
+  { author: "Masaya Tanaka" },
+  { author: "Hiro Kubo" },
+  { author: "Shuichi Ogawa" },
+  { author: "Robert Lee" },
+  { author: "Alex Khan" },
+  { author: "Yasuhiro Ochiai" },
+  { author: "William Sakurai" },
+  { author: "Takehiro Hasegawa" },
+  { author: "Emi Ono" },
+  { author: "Mayumi Araki" },
+  { author: "Masaki Komatsu" },
+  { author: "Maki Moriyama" },
+  { author: "Yoko Makino" },
+  { author: "Maria Okuda" },
+  { author: "Junko Young" },
+  { author: "Shigeki Akiyama" },
+  { author: "Keiko Harada" },
+  { author: "Taka Murakami" },
+  { author: "Keiko Arai" },
+  { author: "Kazuo Ozawa" },
+  { author: "Yasuo Maruyama" },
+  { author: "Anna Nakai" },
+  { author: "Mai Matsuo" },
+  { author: "Aiko Nishi" },
+  { author: "Keita Yokota" },
+  { author: "Yoshiki Tominaga" },
+  { author: "Patrick Shimada" },
+  { author: "Aya Suzuki" },
+  { author: "Manabu Takeda" },
+  { author: "Ayako Adachi" },
+  { author: "Mayumi Ohashi" },
+  { author: "Anna Mizutani" },
+  { author: "Sarah Kawashima" },
+  { author: "Masatoshi Takagi" },
+  { author: "Megumi Oda" },
+  { author: "Takeshi Aizawa" },
+  { author: "Maki Hirata" },
+  { author: "Peter Katayama" },
+  { author: "Yoko Arakawa" },
+  { author: "Satoru Fukuda" },
+  { author: "Tadashi Hamada" },
+  { author: "Michiko Mori" },
+  { author: "Jun Aoki" },
+  { author: "Atsuko Fujita" },
+  { author: "Sally Tan" },
+  { author: "Eric Shi" },
+  { author: "Kelly Xue" },
+  { author: "Charlie Lim" },
+  { author: "Ming Stone" },
+  { author: "Johnny Lau" },
+  { author: "Jon Lam" },
+  { author: "Ye Lai" },
+  { author: "Jessica Bao" },
+  { author: "David Xing" },
+  { author: "Ada Yip" },
+  { author: "Bill Liao" },
+  { author: "Amy Zou" },
+  { author: "Olivia Khan" },
+  { author: "Marco Cheung" },
+  { author: "Lucy Lou" },
+  { author: "Sarah Nie" },
+  { author: "Liu Hwang" },
+  { author: "Laura Jiang" },
+  { author: "Sky Hong" },
+  { author: "Arthur Tao" },
+  { author: "Yu Yang" },
+  { author: "Lin Yao" },
+  { author: "Judy Kwok" },
+  { author: "Michelle Choi" },
+  { author: "Liu Xiang" },
+  { author: "Peng Guo" },
+  { author: "Daniel Brown" },
+  { author: "Vincent Kim" },
+  { author: "Neo Brown" },
+  { author: "Iris Chu" },
+  { author: "Wang Boy" },
+  { author: "Chen Chi" },
+  { author: "Michael Lee" },
+  { author: "Victoria Wen" },
+  { author: "Ivy Tian" },
+  { author: "Steven Dai" },
+  { author: "Tina Xiao" },
+  { author: "Summer Hwang" },
+  { author: "Sally Bai" },
+  { author: "Vincent Feng" },
+  { author: "Joyce Fan" },
+  { author: "Luke Tao" },
+  { author: "Scott Tan" },
+  { author: "Justin Fang" },
+  { author: "Zoe Fan" },
+  { author: "Nancy Pan" },
+  { author: "Cherry Tan" },
+  { author: "Kyle Rui" },
+  { author: "Ye Jie" },
+  { author: "Gavin Wan" },
+  { author: "Zoe Chu" },
+  { author: "Lucas Jiang" },
+  { author: "Jackie Chan" },
+  { author: "Vicky Young" },
+  { author: "Judy Yue" },
+  { author: "Ming Chi" },
+  { author: "Coco Cheng" },
+  { author: "James Chiu" },
+  { author: "Tracy Deng" },
+  { author: "Scott Rui" },
+  { author: "Lee Hou" },
+  { author: "Yi Gao" },
+  { author: "Sandy Xin" },
+  { author: "Alice Hsu" },
+  { author: "Lee Fan" },
+  { author: "Ben Xin" },
+  { author: "Oliver Luo" },
+  { author: "Sean Hong" },
+  { author: "Anna Liu" },
+  { author: "Jeff Tsai" },
+  { author: "Allen Xiao" },
+  { author: "Joy Feng" },
+  { author: "Fan Tsai" },
+  { author: "Cindy Man" },
+  { author: "Andrea Tian" },
+  { author: "Joseph Jing" },
+  { author: "Zoe Leo" },
+  { author: "Kate Kang" },
+  { author: "Wei Zhan" },
+  { author: "Tina Lyu" },
+  { author: "Sunny Cai" },
+  { author: "Lena Shanghai" },
+  { author: "Emily Yao" },
+  { author: "Peter Shi" },
+  { author: "Jerry Lin" },
+  { author: "Huang Luo" },
+  { author: "Xiao Chung" },
+  { author: "Jessica Dong" },
+  { author: "Xin Duan" },
+  { author: "Sophie Liu" },
+  { author: "Richard Lan" },
+  { author: "Jay Kuo" },
+  { author: "Cathy Bao" },
+  { author: "Chen Wong" },
+  { author: "Sam Xing" },
+  { author: "Han Yong" },
+  { author: "Maggie Hwang" },
+  { author: "Iris Pang" },
+  { author: "Harry Kim" },
+  { author: "Jieun Chan" },
+  { author: "Paul Choi" },
+  { author: "Michelle Ryu" },
+  { author: "Sarah Yun" },
+  { author: "Hyunjin Shin" },
+  { author: "Jiyeon Yeo" },
+  { author: "Jiyeon Lim" },
+  { author: "Kate Sun" },
+  { author: "Jenny Min" },
+  { author: "Lee Young" },
+  { author: "Sean Rhee" },
+  { author: "Peter Koh" },
+  { author: "Sunny Yeon" },
+  { author: "Martin Han" },
+  { author: "Jamie Yoo" },
+  { author: "Jinyoung Hun" },
+  { author: "Steve Chae" },
+  { author: "Thomas Heo" },
+  { author: "Mina Eun" },
+  { author: "Jihyun Kang" },
+  { author: "Brian Hoon" },
+  { author: "Jane Byun" },
+  { author: "Ryan Shim" },
+  { author: "Jamie Ahn" },
+  { author: "James Bae" },
+  { author: "Eun-young Sun" },
+  { author: "Kelly Son" },
+  { author: "Jenny Young" },
+  { author: "Young Hyun" },
+  { author: "John Kwon" },
+  { author: "Jinho Chang" },
+  { author: "Jae Youn" },
+  { author: "Jinwoo Yeo" },
+  { author: "Matthew Song" },
+  { author: "Eun Joo" },
+  { author: "Yuri Baek" },
+  { author: "Min-ho Hwang" },
+  { author: "Edward Hee" },
+  { author: "Sunny Lee" },
+  { author: "Jun Nam" },
+  { author: "Ji-young Bae" },
+  { author: "Shawn Korea" },
+  { author: "Mina Seo" },
+  { author: "Jun-ho Yang" },
+  { author: "Patrick Hun" },
+  { author: "Jane Koh" },
+  { author: "Min Korea" },
+  { author: "Robert Yoon" },
+  { author: "Justin Kang" },
+  { author: "Hyejin Kwak" },
+  { author: "Alan Chou" },
+  { author: "Andrew Shih" },
+  { author: "Alice Fan" },
+  { author: "Tina Hung" },
+  { author: "Jessica Kang" },
+  { author: "Justin Cheng" },
+  { author: "Cindy Sung" },
+  { author: "Nick Jiang" },
+  { author: "Wendy Tang" },
+  { author: "Jimmy Shih" },
+  { author: "Allen Hung" },
+  { author: "Vincent Tai" },
+  { author: "Lin Cho" },
+  { author: "Lin Chi" },
+  { author: "John Hsieh" },
+  { author: "Wendy Fang" },
+  { author: "Andy Yeh" },
+  { author: "Tina Tang" },
+  { author: "Jeremy Hsueh" },
+  { author: "Wendy Chan" },
+  { author: "Ray Cheng" },
+  { author: "Tina Yang" },
+  { author: "Mark Chi" },
+  { author: "Alice Liu" },
+  { author: "Eric Yang" },
+  { author: "George Yen" },
+  { author: "Grace Hsiao" },
+  { author: "Tina Hsu" },
+  { author: "Lin Chen" },
+  { author: "Scott Ting" },
+  { author: "Allen Fang" },
+  { author: "John Wang" },
+  { author: "Jason Tsai" },
+  { author: "Tiffany Tan" },
+  { author: "Wendy Chao" },
+  { author: "Scott Yao" },
+  { author: "Maggie Chou" },
+  { author: "Ken Kao" },
+  { author: "Lin Chuang" },
+  { author: "Ryan Chu" },
+  { author: "Robert Kang" },
+  { author: "Paul Hung" },
+  { author: "Johnny Yeh" },
+  { author: "Alice Cheng" },
+  { author: "Grace Hsieh" },
+  { author: "Scott Kuo" },
+  { author: "Edward Wang" },
+  { author: "Steve Tang" },
+  { author: "Emily Hung" },
+  { author: "Charlie Tsao" },
+];
 
-const indianName = [
+const indianNames = [
   { author: "Payal Oberoi" },
   { author: "Mehul Francis" },
   { author: "Amrita Nair" },
@@ -922,7 +1173,39 @@ const indianName = [
 const generateName = async (nameArray) => {
   for (let i = 0; i < 50; i++) {
     const name = await axios.get(
-      "https://api.parser.name/?api_key=YOUR_API_KEY&endpoint=generate&country_code=COUNTRY_CODE"
+      "https://api.parser.name/?api_key=89e5279134aa6e3bdcefd645a54c8572&endpoint=generate&country_code=JP"
+    );
+    const response = await name.data;
+    let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
+    const isNameExist = nameArray.filter((name) => name.author === newName);
+    if (!isNameExist.length) nameArray.push({ author: newName });
+  }
+  console.dir(nameArray, { maxArrayLength: null });
+
+  for (let i = 0; i < 100; i++) {
+    const name = await axios.get(
+      "https://api.parser.name/?api_key=89e5279134aa6e3bdcefd645a54c8572&endpoint=generate&country_code=CN"
+    );
+    const response = await name.data;
+    let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
+    const isNameExist = nameArray.filter((name) => name.author === newName);
+    if (!isNameExist.length) nameArray.push({ author: newName });
+  }
+  console.dir(nameArray, { maxArrayLength: null });
+  for (let i = 0; i < 50; i++) {
+    const name = await axios.get(
+      "https://api.parser.name/?api_key=89e5279134aa6e3bdcefd645a54c8572&endpoint=generate&country_code=KR"
+    );
+    const response = await name.data;
+    let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
+    const isNameExist = nameArray.filter((name) => name.author === newName);
+    if (!isNameExist.length) nameArray.push({ author: newName });
+  }
+  console.dir(nameArray, { maxArrayLength: null });
+
+  for (let i = 0; i < 50; i++) {
+    const name = await axios.get(
+      "https://api.parser.name/?api_key=89e5279134aa6e3bdcefd645a54c8572&endpoint=generate&country_code=TW"
     );
     const response = await name.data;
     let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
@@ -931,6 +1214,21 @@ const generateName = async (nameArray) => {
   }
   console.dir(nameArray, { maxArrayLength: null });
 };
+
+generateName(chineeseName);
+
+// const generateName = async (nameArray) => {
+//   for (let i = 0; i < 50; i++) {
+//     const name = await axios.get(
+//       "https://api.parser.name/?api_key=YOUR_API_KEY&endpoint=generate&country_code=COUNTRY_CODE"
+//     );
+//     const response = await name.data;
+//     let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
+//     const isNameExist = nameArray.filter((name) => name.author === newName);
+//     if (!isNameExist.length) nameArray.push({ author: newName });
+//   }
+//   console.dir(nameArray, { maxArrayLength: null });
+// };
 
 // generateName(THE ARRAY OF DATABASE YOU WANT TO PUSH TO);
 
