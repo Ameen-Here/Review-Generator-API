@@ -19,4 +19,4 @@ const generateName = async (nameArray) => {
 
 // generateName(THE ARRAY OF DATABASE YOU WANT TO PUSH TO);
 
-export default europeanName;
+export default generateName;
