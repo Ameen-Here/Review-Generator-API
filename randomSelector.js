@@ -6,20 +6,33 @@ import asianNames from "./Resource/Names/asianNames.js";
 import indianNames from "./Resource/Names/indianNames.js";
 import europeanNames from "./Resource/Names/europeanNames.js";
 
-const randomCategorySelector = function () {
-  const nameCollection = [arabNames, asianNames, europeanNames, indianNames];
+const reviewAuthorGenerator = function (
+  nameCollection,
+  reviewCategoryRandom = null
+) {
   const reviewCollection = [GOOD_REVIEW, AVG_REVIEW, BAD_REVIEWS];
   const reviewRandomNum = Math.floor(Math.random() * 85);
-  const reviewCategoryRandom = Math.floor(Math.random() * 3);
-  const nameCategoryRandomPick = Math.floor(Math.random() * 4);
+  if (!reviewCategoryRandom) {
+    reviewCategoryRandom = Math.floor(Math.random() * reviewCollection.length);
+  }
+  const nameCategoryRandomPick = Math.floor(
+    Math.random() * nameCollection.length
+  );
   const nameRandomNum = Math.floor(Math.random() * 200);
   const { review } = reviewCollection[reviewCategoryRandom][reviewRandomNum];
   const { author } = nameCollection[nameCategoryRandomPick][nameRandomNum];
+  const randomRating = randomRatingSelector(reviewCategoryRandom);
   return {
     review,
     author,
-    reviewCategoryRandom,
+    randomRating,
   };
+};
+
+const randomCategorySelector = function () {
+  const nameCollection = [arabNames, asianNames, europeanNames, indianNames];
+
+  return reviewAuthorGenerator(nameCollection);
 };
 
 const randomRatingSelector = function (reviewCategoryRandom) {

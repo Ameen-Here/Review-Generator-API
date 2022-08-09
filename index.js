@@ -1,19 +1,14 @@
 import express from "express";
 
 const app = express();
-import {
-  randomCategorySelector,
-  randomRatingSelector,
-} from "./randomSelector.js";
+import { randomCategorySelector } from "./randomSelector.js";
 
 const PORT = 3000;
 
 // Routing
 app.get("/v1/reviews", async (req, res) => {
   if (req.query.apiKey) {
-    const { review, author, reviewCategoryRandom } = randomCategorySelector();
-
-    const randomRating = randomRatingSelector(reviewCategoryRandom);
+    const { review, author, randomRating } = randomCategorySelector();
 
     const data = {
       rating: randomRating,
