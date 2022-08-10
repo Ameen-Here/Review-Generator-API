@@ -29,8 +29,15 @@ const reviewAuthorGenerator = function (
   };
 };
 
-const randomCategorySelector = function () {
-  const nameCollection = [arabNames, asianNames, europeanNames, indianNames];
+const randomCategorySelector = function (names) {
+  let nameCollection;
+  if (!names) {
+    nameCollection = [asianNames, europeanNames];
+  } else {
+    nameCollection = names;
+  }
+
+  console.log(names);
 
   return reviewAuthorGenerator(nameCollection);
 };

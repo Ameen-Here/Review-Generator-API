@@ -1,13 +1,14 @@
 import axios from "axios";
-import asianNames from "./Resource/Names/asianNames";
-import indianNames from "./Resource/Names/indianNames";
-import europeanNames from "./Resource/Names/europeanNames";
-import arabNames from "./Resource/Names/arabNames";
+import asianNames from "./Resource/Names/asianNames.js";
+import indianNames from "./Resource/Names/indianNames.js";
+import europeanNames from "./Resource/Names/europeanNames.js";
+import arabNames from "./Resource/Names/arabNames.js";
+import japaneeseName from "./Resource/Names/japaneeseName.js";
 
 const generateName = async (nameArray) => {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 250; i++) {
     const name = await axios.get(
-      "https://api.parser.name/?api_key=YOUR_API_KEY&endpoint=generate&country_code=COUNTRY_CODE"
+      "https://api.parser.name/?api_key=your_api_key&endpoint=generate&country_code=your_country_code"
     );
     const response = await name.data;
     let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
@@ -17,6 +18,6 @@ const generateName = async (nameArray) => {
   console.dir(nameArray, { maxArrayLength: null });
 };
 
-// generateName(THE ARRAY OF DATABASE YOU WANT TO PUSH TO);
+// generateName();
 
 export default generateName;
