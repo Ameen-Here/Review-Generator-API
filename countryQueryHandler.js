@@ -29,4 +29,4 @@ const extractCountryName = (queryCountry) => {
   return tempString;
 };
 
-export default extractCountryName;
+export { extractCountryName, nameRouter };

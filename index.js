@@ -2,10 +2,25 @@ import express from "express";
 
 const app = express();
 import { randomCategorySelector } from "./randomSelector.js";
-import extractCountryName from "./countryQueryHandler.js";
+import { extractCountryName, nameRouter } from "./countryQueryHandler.js";
 const PORT = 3000;
 
 // Routing
+app.get("/v1/review", async (req, res) => {
+  if (req.query.apiKey) {
+    const { review, author, randomRating } = randomCategorySelector();
+
+    const data = {
+      rating: randomRating,
+      review,
+      author,
+    };
+
+    return res.send(data);
+  }
+  res.send("No API");
+});
+
 app.get("/v1/reviews", async (req, res) => {
   if (req.query.apiKey) {
     let countryQuery = false;
@@ -15,7 +30,6 @@ app.get("/v1/reviews", async (req, res) => {
 
       countryQuery = countryQuery.map((string) => nameRouter[string.trim()]);
     }
-
     const { review, author, randomRating } =
       randomCategorySelector(countryQuery);
 
@@ -27,7 +41,7 @@ app.get("/v1/reviews", async (req, res) => {
 
     return res.send(data);
   }
-  res.send("No endpoint");
+  res.send("No Api");
 });
 
 app.listen(PORT, () => console.log(`Server listening to port ${PORT}`));

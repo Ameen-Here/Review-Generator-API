@@ -6,6 +6,8 @@ import asianNames from "./Resource/Names/asianNames.js";
 import indianNames from "./Resource/Names/indianNames.js";
 import europeanNames from "./Resource/Names/europeanNames.js";
 
+const NAME_COLLECTION = [arabNames, europeanNames, asianNames, indianNames];
+
 const reviewAuthorGenerator = function (
   nameCollection,
   reviewCategoryRandom = null
@@ -32,14 +34,15 @@ const reviewAuthorGenerator = function (
 const randomCategorySelector = function (names) {
   let nameCollection;
   if (!names) {
-    nameCollection = [asianNames, europeanNames];
+    nameCollection = NAME_COLLECTION;
   } else {
     nameCollection = names;
   }
-
-  console.log(names);
-
   return reviewAuthorGenerator(nameCollection);
+};
+
+const randomeOneReview = function () {
+  return reviewAuthorGenerator(NAME_COLLECTION);
 };
 
 const randomRatingSelector = function (reviewCategoryRandom) {
@@ -48,4 +51,4 @@ const randomRatingSelector = function (reviewCategoryRandom) {
   return Math.floor(Math.random() * 2) + 1;
 };
 
-export { randomCategorySelector, randomRatingSelector };
+export { randomCategorySelector, randomeOneReview };
