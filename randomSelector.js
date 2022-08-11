@@ -1,29 +1,26 @@
-import GOOD_REVIEW from "./Resource/Reviews/goodReview.js";
-import BAD_REVIEWS from "./Resource/Reviews/badReview.js";
-import AVG_REVIEW from "./Resource/Reviews/avgReview.js";
-import arabNames from "./Resource/Names/arabNames.js";
-import asianNames from "./Resource/Names/asianNames.js";
-import indianNames from "./Resource/Names/indianNames.js";
-import europeanNames from "./Resource/Names/europeanNames.js";
+import { NAME_COLLECTION } from "./countryQueryHandler.js";
+import { REVIEW_COLLECTION } from "./reviewQUeryHandler.js";
+const NO_OF_REVIEWS = 85;
+const NO_OF_NAMES = 200;
 
-const NAME_COLLECTION = [arabNames, europeanNames, asianNames, indianNames];
-
-const reviewAuthorGenerator = function (
-  nameCollection,
-  reviewCategoryRandom = null
-) {
-  const reviewCollection = [GOOD_REVIEW, AVG_REVIEW, BAD_REVIEWS];
-  const reviewRandomNum = Math.floor(Math.random() * 85);
-  if (!reviewCategoryRandom) {
-    reviewCategoryRandom = Math.floor(Math.random() * reviewCollection.length);
-  }
-  const nameCategoryRandomPick = Math.floor(
-    Math.random() * nameCollection.length
+const reviewAuthorGenerator = function (nameCollection, reviewCollection) {
+  // Getting Random Review
+  const randomReviewCategory = Math.floor(
+    Math.random() * reviewCollection.length
   );
-  const nameRandomNum = Math.floor(Math.random() * 200);
-  const { review } = reviewCollection[reviewCategoryRandom][reviewRandomNum];
-  const { author } = nameCollection[nameCategoryRandomPick][nameRandomNum];
-  const randomRating = randomRatingSelector(reviewCategoryRandom);
+  const randomReview = Math.floor(Math.random() * NO_OF_REVIEWS) + 3;
+  const { review } = reviewCollection[randomReviewCategory][randomReview];
+
+  // Getting Random author
+  const randomNameCategory = Math.floor(Math.random() * nameCollection.length);
+  const nameRandomNum = Math.floor(Math.random() * NO_OF_NAMES);
+  const { author } = nameCollection[randomNameCategory][nameRandomNum];
+
+  // Getting Random rating
+  const randomRatingPicker = Math.floor(Math.random() * 3);
+  const randomRating =
+    reviewCollection[randomReviewCategory][randomRatingPicker];
+
   return {
     review,
     author,
@@ -31,24 +28,20 @@ const reviewAuthorGenerator = function (
   };
 };
 
-const randomCategorySelector = function (names) {
-  let nameCollection;
-  if (!names) {
-    nameCollection = NAME_COLLECTION;
-  } else {
-    nameCollection = names;
-  }
-  return reviewAuthorGenerator(nameCollection);
+const randomCategorySelector = function (names, review) {
+  // Full name collection if name collection not given else given names collection
+  let nameCollection = NAME_COLLECTION;
+  if (names) nameCollection = names;
+
+  // Full review collection if review collection not given else given review collection
+  let reviewCollection = REVIEW_COLLECTION;
+  if (review) reviewCollection = review;
+
+  return reviewAuthorGenerator(nameCollection, reviewCollection);
 };
 
 const randomeOneReview = function () {
-  return reviewAuthorGenerator(NAME_COLLECTION);
-};
-
-const randomRatingSelector = function (reviewCategoryRandom) {
-  if (reviewCategoryRandom === 0) return Math.floor(Math.random() * 2) + 4;
-  else if (reviewCategoryRandom === 1) return Math.floor(Math.random() * 2) + 3;
-  return Math.floor(Math.random() * 2) + 1;
+  return reviewAuthorGenerator(NAME_COLLECTION, REVIEW_COLLECTION);
 };
 
 export { randomCategorySelector, randomeOneReview };

@@ -1,5 +1,8 @@
 // SCRAPPED REVIEWS USING Ryte Software 85
 const AVG_REVIEW = [
+  2.5,
+  3,
+  3.5,
   {
     review: `This is an average product. It's not the best there is but it also isn't the worst`,
   },

@@ -4,6 +4,14 @@ import europeanNames from "./Resource/Names/europeanNames.js";
 import arabNames from "./Resource/Names/arabNames.js";
 import indianNames from "./Resource/Names/indianNames.js";
 
+const NAME_COLLECTION = [
+  arabNames,
+  europeanNames,
+  asianNames,
+  indianNames,
+  japaneeseName,
+];
+
 const nameRouter = {
   japan: japaneeseName,
   china: asianNames,
@@ -26,4 +34,4 @@ const extractCountryName = (queryCountry) => {
   return tempString;
 };
 
-export { extractCountryName, nameRouter };
+export { extractCountryName, nameRouter, NAME_COLLECTION };

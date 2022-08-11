@@ -1,5 +1,8 @@
 // SCRAPPED REVIEWS USING Ryte Software 85
 const GOOD_REVIEW = [
+  5,
+  4.5,
+  4,
   {
     review: `I was skeptical of using this product at first, but I am so glad that I did. This is the best product/market(make it dynamic) in the market for a very competitive price. It is easy to use and always has a quick response time. I would recommend this to anyone who wants the best product on the market for their buck.`,
   },
@@ -16,16 +19,16 @@ const GOOD_REVIEW = [
     review: `I've been using This for about a month now and I absolutely love it! Prior to using this, I had tried a few other products and wasn't happy with them. This is the best product on the market.`,
   },
   {
-    review: `I have tried a ton of different skin care products in my time and I just can't say enough good things about this one. It is light, gentle, and doesn't make my skin feel greasy. My acne has cleared up so much and my complexion looks great. I have to stop myself from using it every day because every time I do it feels like a treat`,
+    review: `I have tried a ton of different skin care services in my time and I just can't say enough good things about this one. It is light, gentle, and doesn't make my skin feel greasy. My acne has cleared up so much and my complexion looks great. I have to stop myself from using it every day because every time I do it feels like a treat`,
   },
   {
-    review: `This is the best product that I've ever seen. It's one of a kind and worth every penny. I can't imagine living without This now that I have it.`,
+    review: `This is the best service that I've ever seen. It's one of a kind and worth every penny. I can't imagine living without This now that I have it.`,
   },
   {
-    review: `I have never been so happy with a product in my entire life. This is the best thing ever! I feel confident and sexy and can't believe I've been ignoring it for so long.`,
+    review: `I have never been so happy with a service in my entire life. This is the best thing ever! I feel confident and sexy and can't believe I've been ignoring it for so long.`,
   },
   {
-    review: `I am at a lost for words when it comes to how amazing this product is. I have never seen anything so good in my entire life. It is not just an app, it's a lifestyle`,
+    review: `I am at a lost for words when it comes to how amazing this service is. I have never seen anything so good in my entire life. It is not just an app, it's a lifestyle`,
   },
   {
     review: `I have never seen a product like This in my life. I am very happy with the performance and quality of this product, and would recommend it to my family and friends. I'm so glad I found out about this company.`,

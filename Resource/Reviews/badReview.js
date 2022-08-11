@@ -1,5 +1,8 @@
 // SCRAPPED REVIEWS USING Ryte Software 85
 const BAD_REVIEWS = [
+  1,
+  1.5,
+  2,
   {
     review: `I do not recommend this product. I was really excited to get this and then when it came in, I had some troubles with it. The first thing that didn't work was the app itself. It would crash every time I would open it up. When I could finally get past that, the content that it generated was terrible! It wasn't generating any quality whatsoever.`,
   },
