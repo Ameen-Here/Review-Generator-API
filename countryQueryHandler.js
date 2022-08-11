@@ -2,12 +2,14 @@ import japaneeseName from "./Resource/Names/japaneeseName.js";
 import asianNames from "./Resource/Names/asianNames.js";
 import europeanNames from "./Resource/Names/europeanNames.js";
 import arabNames from "./Resource/Names/arabNames.js";
+import indianNames from "./Resource/Names/indianNames.js";
 
 const nameRouter = {
   japan: japaneeseName,
   china: asianNames,
   europe: europeanNames,
   middleEast: arabNames,
+  india: indianNames,
 };
 
 const checkWrongCountryInput = (newString) => {
@@ -19,12 +21,7 @@ const checkWrongCountryInput = (newString) => {
 };
 
 const extractCountryName = (queryCountry) => {
-  const tempString = queryCountry
-    .split("") // Converting string "[xyz,xyz]" to ["[","x","y",.......,"z","]"]
-    .slice(1) // Removing first bracket
-    .slice(0, -1) // Removing last bracket
-    .join("") // Converting to string
-    .split(","); // Converted back to array with comma seperated
+  const tempString = queryCountry.split(","); // Converted  array with comma seperated
   if (!checkWrongCountryInput(tempString)) return false;
   return tempString;
 };
