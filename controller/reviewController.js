@@ -1,5 +1,6 @@
 import { isValidApiKey } from "../apiKeyHandler.js";
 import { randomeOneReview } from "../randomSelector.js";
+import { errorCreator, successCreator } from "./jsonResultGenerator.js";
 import randomReviewGenerator from "./randomReviewGenerator.js";
 
 const getOneRandomReview = async (req, res) => {
@@ -7,11 +8,11 @@ const getOneRandomReview = async (req, res) => {
   if (isValidApiKey(req.query.apiKey)) {
     const { review, author, randomRating } = randomeOneReview();
 
-    const data = {
-      status: 200,
-      success: true,
-      body: { rating: randomRating, review: review, author: author },
-    };
+    const data = successCreator({
+      rating: randomRating,
+      review: review,
+      author: author,
+    });
 
     return res.json(data);
   }
@@ -19,29 +20,30 @@ const getOneRandomReview = async (req, res) => {
 };
 
 const getRandomReview = async (req, res) => {
-  if (isValidApiKey(req.query.apiKey)) {
-    let reviewQty = 1;
-    const countryUser = req.query.country;
-    const reviewUser = req.query.review;
+  try {
+    if (isValidApiKey(req.query.apiKey)) {
+      let reviewQty = 1;
+      const countryUser = req.query.country;
+      const reviewUser = req.query.review;
 
-    if (req.query.qty) {
-      if (req.query.qty > 10) return res.send("More calls than your limit");
-      reviewQty = req.query.qty;
+      if (req.query.qty) {
+        if (req.query.qty > 10)
+          return res.send(errorCreator("More calls than your limit"));
+        reviewQty = req.query.qty;
+      }
+      const reviewBody = await randomReviewGenerator(
+        reviewQty,
+        countryUser,
+        reviewUser
+      );
+
+      const data = successCreator(reviewBody);
+      return res.send(data);
     }
-    const reviewBody = await randomReviewGenerator(
-      reviewQty,
-      countryUser,
-      reviewUser
-    );
-
-    const data = {
-      status: 200,
-      success: true,
-      body: reviewBody,
-    };
-    return res.send(data);
+    res.send(errorCreator("Invalid API Key"));
+  } catch (err) {
+    res.send(errorCreator(err.message));
   }
-  res.send("Invalid API Key");
 };
 
 export { getOneRandomReview, getRandomReview };
