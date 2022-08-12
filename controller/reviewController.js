@@ -1,7 +1,6 @@
 import { isValidApiKey } from "../apiKeyHandler.js";
-import { randomCategorySelector, randomeOneReview } from "../randomSelector.js";
-import { extractCountryName, nameRouter } from "../countryQueryHandler.js";
-import { extractReviewName, reviewRouter } from "../reviewQUeryHandler.js";
+import { randomeOneReview } from "../randomSelector.js";
+import randomReviewGenerator from "./randomReviewGenerator.js";
 
 const getOneRandomReview = async (req, res) => {
   // Only for random review with random category, random rating and random names. Nothing else.
@@ -21,31 +20,20 @@ const getOneRandomReview = async (req, res) => {
 
 const getRandomReview = async (req, res) => {
   if (isValidApiKey(req.query.apiKey)) {
-    let countryQuery = false;
-    let reviewQuery = false;
     let reviewQty = 1;
-    const reviewBody = [];
+    const countryUser = req.query.country;
+    const reviewUser = req.query.review;
+
     if (req.query.qty) {
       if (req.query.qty > 10) return res.send("More calls than your limit");
       reviewQty = req.query.qty;
     }
-    for (let i = 0; i < reviewQty; i++) {
-      if (req.query.country) {
-        countryQuery = extractCountryName(req.query.country);
-        if (!countryQuery) return res.send("Wrong Inputs"); // Checking if input is wrong or not
-        countryQuery = countryQuery.map((string) => nameRouter[string.trim()]);
-      }
-      if (req.query.review) {
-        reviewQuery = extractReviewName(req.query.review);
-        if (!reviewQuery) return res.send("Wrong Inputs"); // Checking if input is wrong or not
-        reviewQuery = reviewQuery.map((string) => reviewRouter[string.trim()]);
-      }
-      const { review, author, randomRating } = randomCategorySelector(
-        countryQuery,
-        reviewQuery
-      );
-      reviewBody.push({ rating: randomRating, review: review, author: author });
-    }
+    const reviewBody = await randomReviewGenerator(
+      reviewQty,
+      countryUser,
+      reviewUser
+    );
+
     const data = {
       status: 200,
       success: true,

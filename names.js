@@ -4,6 +4,7 @@ import indianNames from "./Resource/Names/indianNames.js";
 import europeanNames from "./Resource/Names/europeanNames.js";
 import arabNames from "./Resource/Names/arabNames.js";
 import japaneeseName from "./Resource/Names/japaneeseName.js";
+import usNames from "./Resource/Names/unitedStatesNames.js";
 
 const generateName = async (nameArray) => {
   for (let i = 0; i < 250; i++) {
