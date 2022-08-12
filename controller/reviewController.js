@@ -5,7 +5,8 @@ import randomReviewGenerator from "./randomReviewGenerator.js";
 
 const getOneRandomReview = async (req, res) => {
   // Only for random review with random category, random rating and random names. Nothing else.
-  if (isValidApiKey(req.query.apiKey)) {
+  const isApiKeyValid = await isValidApiKey(req.query.apiKey);
+  if (isApiKeyValid) {
     const { review, author, randomRating } = randomeOneReview();
 
     const data = successCreator({
@@ -21,7 +22,8 @@ const getOneRandomReview = async (req, res) => {
 
 const getRandomReview = async (req, res) => {
   try {
-    if (isValidApiKey(req.query.apiKey)) {
+    const isApiKeyValid = await isValidApiKey(req.query.apiKey);
+    if (isApiKeyValid) {
       let reviewQty = 1;
       const countryUser = req.query.country;
       const reviewUser = req.query.review;

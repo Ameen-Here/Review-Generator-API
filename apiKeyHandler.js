@@ -1,12 +1,21 @@
 import { v4 as uuidv4 } from "uuid";
+import Api from "./models/apiCollection.js";
+const dt = new Date();
 
-const APIKEYS = ["cd593d2f-e04a-40fd-aa62-f17158b82f7c"];
+const isValidApiKey = async (key) => {
+  const apiData = await Api.find({});
+  const apiCollections = apiData.map((datas) => datas.api);
+  return apiCollections.includes(key);
+};
 
-const isValidApiKey = (key) => APIKEYS.includes(key);
-
-const createApiKey = () => {
+const createApiKey = async () => {
   const key = uuidv4();
-  APIKEYS.push(key);
+  const apiData = new Api({
+    api: key,
+    date: dt.getTime(),
+    noOfCalls: 25,
+  });
+  await apiData.save();
   return key;
 };
 
