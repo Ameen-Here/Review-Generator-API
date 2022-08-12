@@ -5,7 +5,10 @@ import randomReviewGenerator from "./randomReviewGenerator.js";
 
 const getOneRandomReview = async (req, res) => {
   // Only for random review with random category, random rating and random names. Nothing else.
-  const isApiKeyValid = await isValidApiKey(req.query.apiKey);
+  const { isApiKeyValid, noOfCalls } = await isValidApiKey(
+    req.query.apiKey,
+    req.query.qty
+  );
   if (isApiKeyValid) {
     const { review, author, randomRating } = randomeOneReview();
 
@@ -22,17 +25,21 @@ const getOneRandomReview = async (req, res) => {
 
 const getRandomReview = async (req, res) => {
   try {
-    const isApiKeyValid = await isValidApiKey(req.query.apiKey);
+    console.log(req.query.qty);
+    const reviewQty = req.query.qty ? req.query.qty : 1;
+    console.log("///////////");
+    console.log(reviewQty);
+    const { isApiKeyValid, noOfCalls } = await isValidApiKey(
+      req.query.apiKey,
+      reviewQty
+    );
+    console.log(isApiKeyValid);
+    console.log(noOfCalls);
+    if (!noOfCalls) return res.send(errorCreator("More calls than your limit"));
     if (isApiKeyValid) {
-      let reviewQty = 1;
       const countryUser = req.query.country;
       const reviewUser = req.query.review;
 
-      if (req.query.qty) {
-        if (req.query.qty > 10)
-          return res.send(errorCreator("More calls than your limit"));
-        reviewQty = req.query.qty;
-      }
       const reviewBody = await randomReviewGenerator(
         reviewQty,
         countryUser,
