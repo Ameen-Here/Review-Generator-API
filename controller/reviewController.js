@@ -25,16 +25,12 @@ const getOneRandomReview = async (req, res) => {
 
 const getRandomReview = async (req, res) => {
   try {
-    console.log(req.query.qty);
     const reviewQty = req.query.qty ? req.query.qty : 1;
-    console.log("///////////");
-    console.log(reviewQty);
     const { isApiKeyValid, noOfCalls } = await isValidApiKey(
       req.query.apiKey,
       reviewQty
     );
-    console.log(isApiKeyValid);
-    console.log(noOfCalls);
+
     if (!noOfCalls) return res.send(errorCreator("More calls than your limit"));
     if (isApiKeyValid) {
       const countryUser = req.query.country;
