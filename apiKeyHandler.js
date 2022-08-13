@@ -11,7 +11,10 @@ const isValidApiKey = async (key, noOfCalls) => {
   const curTime = dt.getTime(); // Getting current time to determine whether to update or not
   const diffTime = curTime - apiAnswer.date;
   if (diffTime > MILLISECOND) {
-    await Api.findOneAndUpdate({ api: key }, { date: curTime, noOfCalls: 25 });
+    await Api.findOneAndUpdate(
+      { api: key },
+      { date: curTime, noOfCalls: apiAnswer.email ? 50 : 25 }
+    );
     apiAnswer = await Api.findOne({ api: key });
   }
   console.log(apiAnswer.noOfCalls);
