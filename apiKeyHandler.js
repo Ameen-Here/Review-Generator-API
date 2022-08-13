@@ -14,6 +14,7 @@ const isValidApiKey = async (key, noOfCalls) => {
     await Api.findOneAndUpdate({ api: key }, { date: curTime, noOfCalls: 25 });
     apiAnswer = await Api.findOne({ api: key });
   }
+  console.log(apiAnswer.noOfCalls);
   const value = apiAnswer.noOfCalls - noOfCalls;
   if (apiAnswer.noOfCalls < noOfCalls)
     return { isApiKeyValid: false, noOfCalls: false };
@@ -22,15 +23,24 @@ const isValidApiKey = async (key, noOfCalls) => {
   return { isApiKeyValid: apiAnswer ? true : false, noOfCalls: true };
 };
 
-const createApiKey = async () => {
-  const key = uuidv4();
-  const apiData = new Api({
-    api: key,
-    date: dt.getTime(),
-    noOfCalls: 25,
-  });
-  await apiData.save();
-  return key;
+const createApiKey = async (email = false) => {
+  try {
+    const key = uuidv4();
+    if (email) {
+      const apiWithTheEmail = await Api.findOne({ email: email });
+      if (apiWithTheEmail) throw new Error("New Email is required");
+    }
+    const apiData = new Api({
+      api: key,
+      date: dt.getTime(),
+      noOfCalls: email ? 50 : 25,
+      email: email,
+    });
+    await apiData.save();
+    return key;
+  } catch (err) {
+    throw new Error(err.message);
+  }
 };
 
 export { isValidApiKey, createApiKey };

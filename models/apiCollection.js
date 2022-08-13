@@ -4,9 +4,11 @@ const apiSchema = new mongoose.Schema({
   api: {
     type: String,
     required: true,
+    unique: true,
   },
-  emaill: {
+  email: {
     type: String,
+    unique: true,
   },
   date: {
     type: Number,
