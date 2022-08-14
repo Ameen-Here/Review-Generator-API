@@ -10,7 +10,7 @@ import portugalNames from "./Resource/Names/portugalNames.js";
 const generateName = async (nameArray) => {
   for (let i = 0; i < 250; i++) {
     const name = await axios.get(
-      "https://api.parser.name/?api_key=89e5279134aa6e3bdcefd645a54c8572&endpoint=generate&country_code=PT"
+      "https://api.parser.name/?api_key=YOUR_API_KEY&endpoint=generate&country_code=COUNTRY_CODE"
     );
     const response = await name.data;
     let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
@@ -20,6 +20,6 @@ const generateName = async (nameArray) => {
   console.dir(nameArray, { maxArrayLength: null });
 };
 
-generateName(portugalNames);
+// generateName(Country_Storing_folder);
 
 export default generateName;
