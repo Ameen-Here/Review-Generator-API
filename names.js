@@ -1,16 +1,11 @@
 import axios from "axios";
-import asianNames from "./Resource/Names/asianNames.js";
-import indianNames from "./Resource/Names/indianNames.js";
-import europeanNames from "./Resource/Names/europeanNames.js";
-import arabNames from "./Resource/Names/arabNames.js";
-import japaneeseName from "./Resource/Names/japaneeseName.js";
-import usNames from "./Resource/Names/unitedStatesNames.js";
-import portugalNames from "./Resource/Names/portugalNames.js";
+
+import germanNames from "./Resource/Names/germanNames.js";
 
 const generateName = async (nameArray) => {
   for (let i = 0; i < 250; i++) {
     const name = await axios.get(
-      "https://api.parser.name/?api_key=YOUR_API_KEY&endpoint=generate&country_code=COUNTRY_CODE"
+      "https://api.parser.name/?api_key=14d88c7ba470803d912a260beab6d271&endpoint=generate&country_code=DE"
     );
     const response = await name.data;
     let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
@@ -20,6 +15,6 @@ const generateName = async (nameArray) => {
   console.dir(nameArray, { maxArrayLength: null });
 };
 
-// generateName(Country_Storing_folder);
+generateName(germanNames);
 
 export default generateName;

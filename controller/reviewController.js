@@ -5,7 +5,7 @@ import randomReviewGenerator from "./randomReviewGenerator.js";
 
 const getOneRandomReview = async (req, res) => {
   // Only for random review with random category, random rating and random names. Nothing else.
-  const { isApiKeyValid, noOfCalls } = await isValidApiKey(
+  const { isApiKeyValid } = await isValidApiKey(
     req.query.apiKey,
     req.query.qty
   );

@@ -1,16 +1,18 @@
 import express from "express";
 import mongoose from "mongoose";
-import Api from "./models/apiCollection.js";
 
-mongoose
-  .connect("mongodb://localhost:27017/reviewGenerator", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connection established with mongoose"))
-  .catch((err) => console.log(`Error in connecting with mongoose ${err}`));
+import "dotenv/config";
 
-mongoose.connection.on("error", (err) => logError(err));
+// Connect to mongoose
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/reviewGenerator";
+mongoose.connect(dbUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "Connection error:"));
+db.once("open", () => console.log("Database Connected"));
 
 const app = express();
 import { router as randomReviewRouter } from "./routes/randomReviewRouter.js";

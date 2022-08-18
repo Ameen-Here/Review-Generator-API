@@ -8,7 +8,6 @@ const apiSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique: true,
   },
   date: {
     type: Number,

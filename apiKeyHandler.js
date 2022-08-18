@@ -17,7 +17,6 @@ const isValidApiKey = async (key, noOfCalls) => {
     );
     apiAnswer = await Api.findOne({ api: key });
   }
-  console.log(apiAnswer.noOfCalls);
   const value = apiAnswer.noOfCalls - noOfCalls;
   if (apiAnswer.noOfCalls < noOfCalls)
     return { isApiKeyValid: false, noOfCalls: false };
@@ -37,7 +36,6 @@ const createApiKey = async (email = false) => {
       api: key,
       date: dt.getTime(),
       noOfCalls: email ? 50 : 25,
-      email: email,
     });
     await apiData.save();
     return key;

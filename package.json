@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ameen-Here/Review-Generator-API#readme",
   "dependencies": {
     "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.5.2",
     "uuid": "^8.3.2"
