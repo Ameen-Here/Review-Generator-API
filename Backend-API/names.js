@@ -16,3 +16,6 @@ const generateName = async (nameArray) => {
 // generateName();
 
 export default generateName;
+
+// New
+// Uae
