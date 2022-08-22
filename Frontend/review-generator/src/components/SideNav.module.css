@@ -1,0 +1,27 @@
+.sideNav {
+  font-size: 18px;
+}
+
+.sideNav ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.sideNav li {
+  padding: 5px 0;
+}
+
+.sideNav h3 {
+  color: #9aa5ac;
+  font-size: 17px;
+}
+
+.sideNav a {
+  color: #49545a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sideNav a:hover {
+  color: #00f;
+}

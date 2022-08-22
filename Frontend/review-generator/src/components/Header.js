@@ -1,14 +1,14 @@
-import classes from "./Header.module.css";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header className={classes.header}>
+    <header className={styles.header}>
       <nav>
-        <h1 id={classes.logo}>Review Generator</h1>
+        <h1 id={styles.logo}>Review Generator</h1>
 
         <ul>
           <li>
-            <a href="#">Login</a>
+            <a href="#">Get Api Key</a>
           </li>
           <li>
             <a href="#">Register</a>

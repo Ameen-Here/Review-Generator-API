@@ -19,3 +19,4 @@ export default generateName;
 
 // New
 // Uae
+// Spanish names
