@@ -20,12 +20,32 @@ const MainContent = () => {
         <br />
         <b className={classes.lightBold}>Happy Coding!!!</b>
       </p>
-      <h2>Authentification & Left Requests</h2>
-      <p>
-        ReviewApi uses API keys to allow access to the API. You can register a
-        new API key at our developer portal. The /status route returns the
-        number of left credits. To authorize, you can use the following ways:
-      </p>
+      <div role="alert" className={`${classes.alert} ${classes.alertInfo}`}>
+        <div className={classes.codeExample}>
+          <div>
+            <b className={classes.bold}>Success Example</b>:
+          </div>
+
+          <div>
+            &#123; <br />
+            &emsp;"status": 200,
+            <br /> &emsp;"success": true,
+            <br /> &emsp;"body":
+            <br />
+            &emsp; [ <br />
+            &emsp; &emsp;&#123;
+            <br /> &emsp; &emsp;&emsp;"rating": 4.5,
+            <br /> &emsp; &emsp;&emsp; "review": "I am so impressed with this
+            product!it never disappoints"
+            <br /> &emsp; &emsp;&emsp; "author": "Kris Bud"
+            <br />
+            &emsp;&emsp; &#125;,
+            <br />
+            &emsp; ] <br />
+            &#125;
+          </div>
+        </div>
+      </div>
       <h3>Supported platform</h3>
       <p>
         This endpoint returns reviews from a review profile url. Please keep in

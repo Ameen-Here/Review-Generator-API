@@ -22,18 +22,18 @@
   font-weight: 600;
 }
 
-.alertWarning {
-  color: #9f8324;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
-}
-
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
   margin: 4% 0;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+}
+
+.alertWarning {
+  color: #9f8324;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
 }
 
 .alertWarning a {
@@ -43,4 +43,15 @@
 
 .alertWarning a:hover {
   color: #607cdb !important;
+}
+
+.alertInfo {
+  color: #267280;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.codeExample {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
