@@ -1,0 +1,46 @@
+.mainContent {
+  color: #49545a;
+  font-size: 16px;
+}
+
+.mainContent h2,
+.mainContent h3,
+.mainContent h4 {
+  margin: 25px 0 10px 0;
+}
+
+.mainContent p {
+  margin: 5px 0 15px 0;
+}
+
+.bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+.lightBold {
+  font-weight: 600;
+}
+
+.alertWarning {
+  color: #9f8324;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin: 4% 0;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alertWarning a {
+  color: #9f8324 !important;
+  text-decoration: underline;
+}
+
+.alertWarning a:hover {
+  color: #607cdb !important;
+}
