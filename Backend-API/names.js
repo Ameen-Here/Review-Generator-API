@@ -20,3 +20,21 @@ export default generateName;
 // New
 // Uae
 // Spanish names
+
+// New
+// Uae
+// Spanish names
+// Russia
+
+// About to
+// Ukraine
+
+// France
+// South korea
+// Saudi arabia
+// qatar
+// switzerland
+// Netherland
+// Mexico
+// South Africa
+// Kenya
