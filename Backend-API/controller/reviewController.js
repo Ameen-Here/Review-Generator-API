@@ -4,23 +4,28 @@ import { errorCreator, successCreator } from "./jsonResultGenerator.js";
 import randomReviewGenerator from "./randomReviewGenerator.js";
 
 const getOneRandomReview = async (req, res) => {
-  // Only for random review with random category, random rating and random names. Nothing else.
-  const { isApiKeyValid } = await isValidApiKey(
-    req.query.apiKey,
-    req.query.qty
-  );
-  if (isApiKeyValid) {
-    const { review, author, randomRating } = randomeOneReview();
+  try {
+    // Only for random review with random category, random rating and random names. Nothing else.
+    const { isApiKeyValid, noOfCalls } = await isValidApiKey(
+      req.query.apiKey,
+      1
+    );
+    if (!noOfCalls) return res.send(errorCreator("More calls than your limit"));
+    if (isApiKeyValid) {
+      const { review, author, randomRating } = randomeOneReview();
 
-    const data = successCreator({
-      rating: randomRating,
-      review: review,
-      author: author,
-    });
+      const data = successCreator({
+        rating: randomRating,
+        review: review,
+        author: author,
+      });
 
-    return res.json(data);
+      return res.json(data);
+    }
+    res.send(errorCreator("Invalid API Key"));
+  } catch (err) {
+    res.send(errorCreator(err.message));
   }
-  res.send("No API");
 };
 
 const getRandomReview = async (req, res) => {

@@ -28,6 +28,7 @@
   margin: 4% 0;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  transition: all 1sec fade-in;
 }
 
 .alertWarning {
@@ -54,4 +55,149 @@
 .codeExample {
   display: grid;
   grid-template-columns: 1fr 3fr;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #f6f8f9;
+  background-clip: border-box;
+  border: 0 solid rgba(55, 63, 67, 0.125);
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.cardHeader {
+  background-color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardContent {
+  padding: 20px 25px;
+}
+
+.url {
+  color: #e83e8c;
+  font-size: 0.9rem;
+}
+
+.url p {
+  margin: 0;
+}
+
+.urlBadge {
+  padding: 5px;
+  text-align: center;
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.headerBtn button {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  color: #00f;
+  border-color: #00f;
+  box-shadow: 0 1px 2px #dde1e3;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.headerBtn button:hover {
+  background-color: #00f;
+  color: white;
+}
+
+/*  */
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #49545a;
+  text-align: left;
+}
+.table table {
+  border-collapse: collapse;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+  display: table;
+}
+
+.table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.table tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.table th {
+  padding: 0.75rem 1.25rem;
+}
+.table thead th {
+  background: transparent !important;
+  border-top: 0;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #c7cdd1;
+  margin-bottom: 0px;
+}
+
+.table thead th {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.pl0,
+.px0 {
+  padding-left: 0 !important;
+}
+
+.table tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.table code {
+  font-size: 16px;
+  color: #e83e8c;
+  word-wrap: break-word;
+}
+
+.table td,
+.table th {
+  vertical-align: top;
+  border-top: 1px solid #c7cdd1;
+}
+
+.table tbody tr {
+  padding: 20px 0 !important;
 }
