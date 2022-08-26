@@ -11,8 +11,8 @@
 
 .prgmOption button {
   padding: 10px;
-  background-color: #00f;
-  color: white;
+  color: #00f;
+  background-color: transparent;
   border: transparent;
   border-radius: 4px;
 }
@@ -53,4 +53,14 @@
 .copyBtn:hover {
   border: 1px solid #6610f2 !important;
   border-radius: 5px;
+}
+
+.options button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #00f !important;
+  color: white !important;
 }
