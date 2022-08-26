@@ -64,3 +64,27 @@
   background-color: #00f !important;
   color: white !important;
 }
+
+.yellowString {
+  color: #ecc48d;
+}
+
+.violetString {
+  color: #c792ea;
+}
+
+.greenString {
+  color: #addb67;
+}
+
+.cyanString {
+  color: #7fdbca;
+}
+
+.orangeString {
+  color: #f78c6c;
+}
+
+.redString {
+  color: #ff5874;
+}
