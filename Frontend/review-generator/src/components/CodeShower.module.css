@@ -1,0 +1,56 @@
+.mainBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prgmOption {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prgmOption button {
+  padding: 10px;
+  background-color: #00f;
+  color: white;
+  border: transparent;
+  border-radius: 4px;
+}
+
+.browserCode {
+  background: #011627;
+  color: #d6deeb;
+  overflow-x: scroll;
+  padding: 15px;
+  border-radius: 2px;
+  width: 900px;
+  word-wrap: break-word;
+}
+
+.preCode {
+  display: block;
+  padding: 10.5px;
+  margin: 0 0 11px;
+  font-size: 13px;
+  line-height: 1.6;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.copyBtn {
+  box-shadow: 0 1px 2px #dde1e3;
+  background-color: white !important;
+  color: #011627 !important;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.copyBtn:hover {
+  border: 1px solid #6610f2 !important;
+  border-radius: 5px;
+}

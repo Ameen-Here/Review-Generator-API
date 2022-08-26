@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CodeShower from "./CodeShower";
 import classes from "./MainContent.module.css";
 
 const MainContent = () => {
@@ -12,11 +13,11 @@ const MainContent = () => {
     <div className={classes.mainContent}>
       <h2>Documentation</h2>
       <div role="alert" className={`${classes.alert} ${classes.alertWarning}`}>
-        <b className={classes.bold}>Pro Tip</b>: Get your free apikey
+        <b className={classes.bold}>Pro Tip</b>: Get your free Api key{" "}
         <a href="#">here</a> and all code snippets below will contain your
-        private apikey. <a href="#">Register</a> with your email to increase
+        private Api key. <a href="#">Register</a> with your email to increase
         your daily limit and all code snippets below will contain your private
-        registered apikey.
+        registered Api key.
       </div>
       <h3>Daily Limits</h3>
       <p>
@@ -118,9 +119,7 @@ const MainContent = () => {
             programming language. The following example will get a random review
             with random names and random rating.
           </p>
-          <p>
-            https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=YOUR_API_KEY
-          </p>
+          <CodeShower />
         </div>
       </div>
 
