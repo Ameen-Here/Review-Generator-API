@@ -1,11 +1,19 @@
 import { useRef, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import classes from "./CodeShower.module.css";
+import CurlValueReview from "./CurlValueReview";
+import NodeValueReview from "./NodeValueReview";
+import PhpValueReview from "./PhpValueReview";
+import PythonValueReview from "./PythonValueReview";
 
 const CodeShower = (e) => {
   const browserCodeRef = useRef();
   const [copyBtnText, setCopyBtnText] = useState("Copy to Clipboard");
   const [copiedValue, setCopiedValue] = useState(
+    "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+  );
+
+  const [valueToShow, setValueToShow] = useState(
     "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
   );
 
@@ -36,6 +44,9 @@ const CodeShower = (e) => {
     setCopiedValue(
       `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5`
     );
+    setValueToShow(
+      "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+    );
     setBtnActive({
       browser: true,
       curl: false,
@@ -49,6 +60,7 @@ const CodeShower = (e) => {
     setCopiedValue(
       `curl "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5" `
     );
+    setValueToShow(<CurlValueReview />);
     setBtnActive({
       browser: false,
       curl: true,
@@ -70,6 +82,9 @@ const CodeShower = (e) => {
     
     response = requests.get('https://lit-chamber-70662.herokuapp.com/v1/review', headers=headers, params=params);
     print(response.text)`);
+
+    setValueToShow(<PythonValueReview />);
+
     setBtnActive({
       browser: false,
       curl: false,
@@ -95,6 +110,9 @@ const CodeShower = (e) => {
       
       request(options, callback);`
     );
+
+    setValueToShow(<NodeValueReview />);
+
     setBtnActive({
       browser: false,
       curl: false,
@@ -127,6 +145,9 @@ const CodeShower = (e) => {
       
       var_dump($json); `
     );
+
+    setValueToShow(<PhpValueReview />);
+
     setBtnActive({
       browser: false,
       curl: false,
@@ -167,7 +188,7 @@ const CodeShower = (e) => {
       <div className={classes.result}>
         <pre className={classes.preCode}>
           <div className={classes.browserCode} ref={browserCodeRef}>
-            {copiedValue}
+            {valueToShow}
           </div>
         </pre>
       </div>
