@@ -91,7 +91,8 @@ const RandomReviews = (props) => {
                 <th scope="col" className={props.classes.pl0}>
                   Parameter
                 </th>
-                <th scope="col">Type</th> <th scope="col">Description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
@@ -116,42 +117,42 @@ const RandomReviews = (props) => {
                 <td>Users API Key to access the API.</td>
               </tr>
               <tr>
-                <th scope="row" class="bt-0">
-                  <code class="highlighter-rouge">qty</code>
-                </th>{" "}
+                <th scope="row">
+                  <code>qty</code>
+                </th>
                 <td>
                   <b>optional</b>,<br /> integer
-                </td>{" "}
+                </td>
                 <td>
                   Amount of reviews you want to retrieve. (Limit depends on user
                   category)
                 </td>
-              </tr>{" "}
+              </tr>
               <tr>
-                <th scope="row" class="bt-0">
-                  <code class="highlighter-rouge">country</code>
-                </th>{" "}
+                <th scope="row">
+                  <code>country</code>
+                </th>
                 <td>
                   <b>optional</b>, string
-                </td>{" "}
+                </td>
                 <td>
                   Format: 'country1,country2,...', gets reviews with author
-                  names from these countries. Check <a href="#">Country</a>{" "}
-                  section to check for supported countries.{" "}
+                  names from these countries. Check <a href="#">Country</a>
+                  section to check for supported countries.
                 </td>
-              </tr>{" "}
+              </tr>
               <tr>
-                <th scope="row" class="bt-0">
-                  <code class="highlighter-rouge">review</code>
-                </th>{" "}
+                <th scope="row">
+                  <code>review</code>
+                </th>
                 <td>
                   <b>optional</b>,<br /> string
-                </td>{" "}
+                </td>
                 <td>
                   To specify review category. Available categories are good,
-                  avg, bad.{" "}
+                  avg, bad.
                 </td>
-              </tr>{" "}
+              </tr>
             </tbody>
           </table>
           <p>

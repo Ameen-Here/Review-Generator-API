@@ -25,8 +25,6 @@ const CodeShower = (e) => {
     php: false,
   });
 
-  console.log(btnActive.browser);
-
   const browserClass = btnActive.browser ? "active" : "";
   const curlClass = btnActive.curl ? "active" : "";
   const pythonClass = btnActive.python ? "active" : "";

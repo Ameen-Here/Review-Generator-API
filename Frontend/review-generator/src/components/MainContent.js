@@ -1,5 +1,4 @@
-import { useState } from "react";
-import CodeShower from "./CodeShower";
+import CountryHelper from "./CountryHelper";
 import classes from "./MainContent.module.css";
 import RandomReview from "./RandomReview";
 import RandomReviews from "./RandomReviews";
@@ -28,6 +27,7 @@ const MainContent = () => {
 
       <RandomReviews classes={classes} />
 
+      <CountryHelper classes={classes} />
       <h3>Supported platform</h3>
       <p>
         This endpoint returns reviews from a review profile url. Please keep in

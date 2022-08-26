@@ -24,8 +24,8 @@ const RandomReview = (props) => {
           </div>
           <div className={props.classes.headerBtn}>
             <button onClick={demoResonseHandler}>
-              {!showDemoResponse && "See Demo Response"}{" "}
-              {showDemoResponse && "Hide Demo Response"}{" "}
+              {!showDemoResponse && "See Demo Response"}
+              {showDemoResponse && "Hide Demo Response"}
             </button>
           </div>
         </div>
@@ -69,7 +69,8 @@ const RandomReview = (props) => {
                 <th scope="col" className={props.classes.pl0}>
                   Parameter
                 </th>
-                <th scope="col">Type</th> <th scope="col">Description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
