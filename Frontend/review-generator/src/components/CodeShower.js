@@ -59,9 +59,17 @@ const CodeShower = (e) => {
   };
 
   const pythonBtnHandler = () => {
-    setCopiedValue(
-      `curl "https://app.reviewapi.io/api/v1/batches/kzPdyP7bQr?apikey=YOUR-APIKEY" `
+    setCopiedValue(`import requests
+
+    headers = { 
+      "apikey": "6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+    }
+    
+    params = (
     );
+    
+    response = requests.get('https://lit-chamber-70662.herokuapp.com/v1/review', headers=headers, params=params);
+    print(response.text)`);
     setBtnActive({
       browser: false,
       curl: false,
@@ -73,7 +81,19 @@ const CodeShower = (e) => {
 
   const nodeBtnHandler = () => {
     setCopiedValue(
-      `curl "https://app.reviewapi.io/api/v1/batches/kzPdyP7bQr?apikey=YOUR-APIKEY" `
+      `var request = require('request');
+
+      var options = { 
+        url: 'https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5' 
+      };
+      
+      function callback(error, response, body) {
+          if (!error && response.statusCode == 200) {
+              console.log(body);
+          }
+      }
+      
+      request(options, callback);`
     );
     setBtnActive({
       browser: false,
@@ -86,7 +106,26 @@ const CodeShower = (e) => {
 
   const phpBtnHandler = () => {
     setCopiedValue(
-      `curl "https://app.reviewapi.io/api/v1/batches/kzPdyP7bQr?apikey=YOUR-APIKEY" `
+      `$ch = curl_init();
+
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_HEADER, false);
+      
+      $data = [
+      ];
+      
+      curl_setopt($ch, CURLOPT_URL, "https://lit-chamber-70662.herokuapp.com/v1/review?" . http_build_query($data));
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+          "Content-Type: application/json",
+          "apikey: 6e97db3d-269c-4309-ad0a-72ffb83cc0d5",  
+      ));
+      
+      $response = curl_exec($ch);
+      curl_close($ch);
+      
+      $json = json_decode($response);
+      
+      var_dump($json); `
     );
     setBtnActive({
       browser: false,
@@ -128,7 +167,7 @@ const CodeShower = (e) => {
       <div className={classes.result}>
         <pre className={classes.preCode}>
           <div className={classes.browserCode} ref={browserCodeRef}>
-            https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5
+            {copiedValue}
           </div>
         </pre>
       </div>
