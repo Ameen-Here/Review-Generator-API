@@ -1,4 +1,5 @@
-![bannerReviewGeberator](https://user-images.githubusercontent.com/86822695/187042309-f2ef6d2c-4626-4803-97d3-d17396b8d8be.png)
+![bannerReviewGeberatormain](https://user-images.githubusercontent.com/86822695/187043884-f981c574-2012-44fb-b7e8-b5171c34bce0.png)
+
 # Review Generator API 
 ![Stars](https://img.shields.io/ore/stars/stars)
 
