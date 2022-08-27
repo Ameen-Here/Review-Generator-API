@@ -1,0 +1,9 @@
+.detailBody {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailBody p,
+.detailBody h3 {
+  margin: 5px;
+}

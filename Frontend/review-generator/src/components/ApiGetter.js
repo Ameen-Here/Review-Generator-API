@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { apiActions } from "../store";
+import ApiDetails from "./ApiDetails";
 import classes from "./MainContent.module.css";
 
 const ApiGetter = () => {
@@ -13,6 +14,8 @@ const ApiGetter = () => {
     );
     const responseApi = await apiKeyGenerated.json();
     const { key, count } = responseApi.body;
+    localStorage.setItem("key", key);
+    localStorage.setItem("count", count);
     dispatch(apiActions.addApiKey(key));
     dispatch(apiActions.addCount(count));
   };
@@ -43,6 +46,7 @@ const ApiGetter = () => {
               <button className={classes.btnApi}>Register</button>
             </Fragment>
           )}
+          {count && <ApiDetails count={count} />}
         </div>
       </div>
     </Fragment>

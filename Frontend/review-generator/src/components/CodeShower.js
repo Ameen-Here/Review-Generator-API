@@ -12,11 +12,11 @@ const CodeShower = () => {
   const browserCodeRef = useRef();
   const [copyBtnText, setCopyBtnText] = useState("Copy to Clipboard");
   const [copiedValue, setCopiedValue] = useState(
-    "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}`
   );
 
   const [valueToShow, setValueToShow] = useState(
-    "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}`
   );
 
   const [btnActive, setBtnActive] = useState({
