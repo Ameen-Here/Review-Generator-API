@@ -12,10 +12,8 @@ Documentation Page: https://reviewgenerator-16007.web.app/
 API: https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5 (Demo key)
 
 Documentation page:
-![reviewGeneratorDocumentationDemo](https://user-images.githubusercontent.com/86822695/187042661-eead0db3-7299-4457-b1d2-ee7407e1a98f.gif)
 
-API:
-https://user-images.githubusercontent.com/86822695/187042758-0bf720d2-f4b2-4f46-8452-95f7d347af42.mp4
+![reviewGeneratorDocumentationDemo](https://user-images.githubusercontent.com/86822695/187042661-eead0db3-7299-4457-b1d2-ee7407e1a98f.gif)
 
 ### Technologies Used
 
@@ -37,45 +35,64 @@ You can get one random review from a random country with random category.
 
 API url:https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=YOUR_API_KEY  (For your API key, visit documentation page.)
 
-https://user-images.githubusercontent.com/86822695/187042901-61c4c4ff-97aa-483c-a92c-824fe6438ab8.mp4
+![randomReviewGif](https://user-images.githubusercontent.com/86822695/187043192-dd6c4bac-c544-49c3-a10a-46e8a5835587.gif)
 
 #### Get multiple reviews using qty query
 
 You can get multiple reviews using qty query, the limit applies to registered and non registered user, where registered user has 50 api calls every day. Non registered user has 25 calls.
 
 API url:https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&qty=5 
+
 ![apiCallqtyDemo](https://user-images.githubusercontent.com/86822695/187043091-4ab33a9f-e321-4044-b293-5b87084b3a2f.gif)
 
 
-#### Graphical representation
+#### Customise country names
 
-Users will get graphical representation using different charts. 
-Pie chart: ALlocations of assets in your portfolio
-Bar chart: Invested amount vs Current value
+You can customise the names of reviews for your specified countries. List of supported countries are given in documentation page.
+These supported countries will get updated every now and then.
 
-![graphical representation](https://user-images.githubusercontent.com/86822695/181798126-380f839f-f97b-46ca-a103-3527c2c8a0a6.gif)
+API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&country=uS,gb
+
+![apiDemoCountry](https://user-images.githubusercontent.com/86822695/187043417-28513cb0-d47e-4adc-badb-de7a9328cec0.gif)
+
+#### Customise review category
+
+You can customise the review categories to get specific reviews. The different categories available are "good", "avg" and "bad".
+
+API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&review=bad
+
+![apiDemoReview](https://user-images.githubusercontent.com/86822695/187043575-399c884f-8b22-4cfb-a4c3-7148d867f6db.gif)
+
+#### Customise mix match options
+
+You can customise the reviews by adding qty, country and review queries in whatever way you need. You can get 10 bad reviews as well as several other options. By default, the quantity will be 1, names will be random and category will also be from random category.
+
+API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&review=bad,good&qty=5&country=jp,in
+
+![apiDemoMix](https://user-images.githubusercontent.com/86822695/187043711-f60e6494-5c4c-4687-9d80-9c0c641c8892.gif)
 
 ## API Reference
 
-#### Get company symbols of stocks
+#### Get one random review
 
-```https://financialmodelingprep.com
-  GET /api/v3/search?query=${companyName}&limit=10&exchange=NASDAQ&apikey=${apiKey}
+```https://lit-chamber-70662.herokuapp.com
+  GET /v1/review?apiKey=YOUR_API_KEY
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `apiKey` | `string` | **Required**. Your API key |
-| `companyName` | `string` | **Required**. Search company Name |
 
-#### Get stock price of the stock.
+#### Get random reviews with name, category and quantity options
 
-```https://www.alphavantage.co
-  GET /query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}
+```https://lit-chamber-70662.herokuapp.com
+  GET v1/reviews?apiKey=YOUR_API_KEY&review=CATEGORY&qty=QUANTITY&country=COUNTRY_CODE
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `apiKey` | `string` | **Required**. Your API key |
-| `symbol` | `string` | **Required**. Search using company symbol |
+| `qty` | `number` | **Optional**. To specify number of reviews |
+| `country` | `string` | **Optional**. To specify country code for the author names |
+| `review` | `string` | **Optional**. To specify the review category |
 
