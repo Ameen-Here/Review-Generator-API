@@ -13,11 +13,11 @@ const SecondCodeShower = () => {
 
   const [copyBtnText, setCopyBtnText] = useState("Copy to Clipboard");
   const [copiedValue, setCopiedValue] = useState(
-    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
+    `https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
   );
 
   const [valueToShow, setValueToShow] = useState(
-    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
+    `https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
   );
 
   const [btnActive, setBtnActive] = useState({
@@ -43,11 +43,11 @@ const SecondCodeShower = () => {
 
   const browserBtnHandler = () => {
     setCopiedValue(
-      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
+      `https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
     );
 
     setValueToShow(
-      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
+      `https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
     );
 
     setBtnActive({
