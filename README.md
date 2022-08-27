@@ -34,7 +34,7 @@ Documentation page:
 
 You can get one random review from a random country with random category.
 
-API url:https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=YOUR_API_KEY  (For your API key, visit documentation page.)
+API url:&emsp;https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=YOUR_API_KEY  (For your API key, visit documentation page.)
 
 ![randomReviewGif](https://user-images.githubusercontent.com/86822695/187043192-dd6c4bac-c544-49c3-a10a-46e8a5835587.gif)
 
@@ -42,7 +42,7 @@ API url:https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=YOUR_API_KEY  (
 
 You can get multiple reviews using qty query, the limit applies to registered and non registered user, where registered user has 50 api calls every day. Non registered user has 25 calls.
 
-API url:https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&qty=5 
+API url:&emsp;https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&qty=5 
 
 ![apiCallqtyDemo](https://user-images.githubusercontent.com/86822695/187043091-4ab33a9f-e321-4044-b293-5b87084b3a2f.gif)
 
@@ -52,7 +52,7 @@ API url:https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&q
 You can customise the names of reviews for your specified countries. List of supported countries are given in documentation page.
 These supported countries will get updated every now and then.
 
-API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&country=uS,gb
+API url:&emsp;https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&country=uS,gb
 
 ![apiDemoCountry](https://user-images.githubusercontent.com/86822695/187043417-28513cb0-d47e-4adc-badb-de7a9328cec0.gif)
 
@@ -60,7 +60,7 @@ API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&
 
 You can customise the review categories to get specific reviews. The different categories available are "good", "avg" and "bad".
 
-API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&review=bad
+API url:&emsp;https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&review=bad
 
 ![apiDemoReview](https://user-images.githubusercontent.com/86822695/187043575-399c884f-8b22-4cfb-a4c3-7148d867f6db.gif)
 
@@ -68,7 +68,7 @@ API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&
 
 You can customise the reviews by adding qty, country and review queries in whatever way you need. You can get 10 bad reviews as well as several other options. By default, the quantity will be 1, names will be random and category will also be from random category.
 
-API url: https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&review=bad,good&qty=5&country=jp,in
+API url:&emsp;https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=YOUR_API_KEY&review=bad,good&qty=5&country=jp,in
 
 ![apiDemoMix](https://user-images.githubusercontent.com/86822695/187043711-f60e6494-5c4c-4687-9d80-9c0c641c8892.gif)
 
