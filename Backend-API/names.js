@@ -1,10 +1,9 @@
 import axios from "axios";
-import UkraineNames from "./Resource/Names/ukraneNames.js";
 
 const generateName = async (nameArray) => {
   for (let i = 0; i < 250; i++) {
     const name = await axios.get(
-      "https://api.parser.name/?api_key=8d8f59a4997f835d1a662c1ceb293242&endpoint=generate&country_code=UA"
+      "https://api.parser.name/?api_key=YOUR_API_KEY&endpoint=generate&country_code=COUNTRY_CODE"
     );
     const response = await name.data;
     let newName = `${response.data[0].name.firstname.name} ${response.data[0].name.lastname.name}`;
@@ -14,7 +13,7 @@ const generateName = async (nameArray) => {
   console.dir(nameArray, { maxArrayLength: null });
 };
 
-generateName(UkraineNames);
+// generateName(COUNTRYNAME);
 
 export default generateName;
 
@@ -22,10 +21,9 @@ export default generateName;
 // Uae
 // Spanish names
 // Russia
-
-// About to
 // Ukraine
 
+// About to
 // France
 // South korea
 // Saudi arabia
