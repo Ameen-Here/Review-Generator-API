@@ -1,6 +1,8 @@
 import classes from "./CodeShower.module.css";
+import { useSelector } from "react-redux";
 
 const NodeValueReviews = () => {
+  const apiKeyStore = useSelector((store) => store.apiKey);
   return (
     <div>
       <span className={classes.violetString}>var</span> request ={" "}
@@ -12,7 +14,8 @@ const NodeValueReviews = () => {
       <br />
       &emsp; <span className={classes.cyanString}>url:</span>
       <span className={classes.yellowString}>
-        'https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=3e46dd50-4d99-4507-a817-173c741e9034&qty=10&country=us,uk&review=good'
+        'https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey={apiKeyStore}
+        &qty=10&country=us,uk&review=good'
       </span>
       <br />
       &#125;;

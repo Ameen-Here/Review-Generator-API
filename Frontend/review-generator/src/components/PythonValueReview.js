@@ -1,6 +1,8 @@
 import classes from "./CodeShower.module.css";
+import { useSelector } from "react-redux";
 
 const PythonValueReview = () => {
+  const apiKeyStore = useSelector((store) => store.apiKey);
   return (
     <div>
       <span className={classes.violetString}>import</span> requests
@@ -9,9 +11,7 @@ const PythonValueReview = () => {
       headers = &#123;
       <br />
       &emsp;&emsp;<span className={classes.yellowString}>"apikey"</span>:{" "}
-      <span className={classes.yellowString}>
-        "3e46dd50-4d99-4507-a817-173c741e9034"
-      </span>
+      <span className={classes.yellowString}>"{apiKeyStore}"</span>
       <br />
       &#125;
       <br />

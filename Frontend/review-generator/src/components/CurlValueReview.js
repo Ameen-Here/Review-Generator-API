@@ -1,11 +1,13 @@
 import classes from "./CodeShower.module.css";
+import { useSelector } from "react-redux";
 
 const CurlValueReview = () => {
+  const apiKeyStore = useSelector((store) => store.apiKey);
   return (
     <div>
       curl&emsp;
       <span className={classes.yellowString}>
-        "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+        "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey={apiKeyStore}"
       </span>
     </div>
   );

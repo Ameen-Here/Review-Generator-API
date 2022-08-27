@@ -2,18 +2,13 @@ import CountryHelper from "./CountryHelper";
 import classes from "./MainContent.module.css";
 import RandomReview from "./RandomReview";
 import RandomReviews from "./RandomReviews";
+import ApiGet from "./ApiGet";
 
 const MainContent = () => {
   return (
     <div className={classes.mainContent}>
+      <ApiGet />
       <h2>Documentation</h2>
-      <div role="alert" className={`${classes.alert} ${classes.alertWarning}`}>
-        <b className={classes.bold}>Pro Tip</b>: Get your free Api key{" "}
-        <a href="#">here</a> and all code snippets below will contain your
-        private Api key. <a href="#">Register</a> with your email to increase
-        your daily limit and all code snippets below will contain your private
-        registered Api key.
-      </div>
       <h3>Daily Limits</h3>
       <p>
         Free API Keys will have a daily limit of 25 reviews. You can upgrade to

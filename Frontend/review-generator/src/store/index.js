@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 const apiSlice = createSlice({
   name: "api",
-  initialState: { apiKey: "ab", count: false },
+  initialState: { apiKey: "YOUR_API_KEY", count: false },
   reducers: {
     addApiKey(state, action) {
       // Allowed to mutate state

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useSelector } from "react-redux";
 import classes from "./CodeShower.module.css";
 import CurlValueReviews from "./CurlValueReviews";
 import NodeValueReviews from "./nodeValueReviews";
@@ -8,13 +9,15 @@ import PythonValueReviews from "./PythonValueReviews";
 
 const SecondCodeShower = () => {
   const browserCodeRef = useRef();
+  const apiKeyStore = useSelector((state) => state.apiKey);
+
   const [copyBtnText, setCopyBtnText] = useState("Copy to Clipboard");
   const [copiedValue, setCopiedValue] = useState(
-    "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
   );
 
   const [valueToShow, setValueToShow] = useState(
-    "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
   );
 
   const [btnActive, setBtnActive] = useState({
@@ -40,11 +43,11 @@ const SecondCodeShower = () => {
 
   const browserBtnHandler = () => {
     setCopiedValue(
-      `https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=3e46dd50-4d99-4507-a817-173c741e9034&qty=10&country=us,uk&review=good`
+      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
     );
 
     setValueToShow(
-      `https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=3e46dd50-4d99-4507-a817-173c741e9034&qty=10&country=us,uk&review=good`
+      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
     );
 
     setBtnActive({
@@ -58,7 +61,7 @@ const SecondCodeShower = () => {
 
   const curlBtnHandler = () => {
     setCopiedValue(
-      `curl "https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=3e46dd50-4d99-4507-a817-173c741e9034&qty=10&country=us,uk&review=good"`
+      `curl "https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good"`
     );
     setValueToShow(<CurlValueReviews />);
     setBtnActive({
@@ -75,7 +78,7 @@ const SecondCodeShower = () => {
     setCopiedValue(`import requests
 
     headers = { 
-      "apikey": "3e46dd50-4d99-4507-a817-173c741e9034"
+      "apikey": "${apiKeyStore}"
     }
     
     params = (
@@ -99,7 +102,7 @@ const SecondCodeShower = () => {
     setCopiedValue(`var request = require('request');
 
     var options = { 
-      url: 'https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=3e46dd50-4d99-4507-a817-173c741e9034&qty=10&country=us,uk&review=good' 
+      url: 'https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good' 
     };
     
     function callback(error, response, body) {
@@ -136,7 +139,7 @@ const SecondCodeShower = () => {
       curl_setopt($ch, CURLOPT_URL, "https://lit-chamber-70662.herokuapp.com/v1/reviews?" . http_build_query($data));
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
           "Content-Type: application/json",
-          "apikey: 3e46dd50-4d99-4507-a817-173c741e9034",  
+          "apikey: ${apiKeyStore}",  
       ));
       
       $response = curl_exec($ch);

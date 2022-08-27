@@ -1,12 +1,14 @@
 import { useRef, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useSelector } from "react-redux";
 import classes from "./CodeShower.module.css";
 import CurlValueReview from "./CurlValueReview";
 import NodeValueReview from "./NodeValueReview";
 import PhpValueReview from "./PhpValueReview";
 import PythonValueReview from "./PythonValueReview";
 
-const CodeShower = (e) => {
+const CodeShower = () => {
+  const apiKeyStore = useSelector((state) => state.apiKey);
   const browserCodeRef = useRef();
   const [copyBtnText, setCopyBtnText] = useState("Copy to Clipboard");
   const [copiedValue, setCopiedValue] = useState(
@@ -40,10 +42,10 @@ const CodeShower = (e) => {
 
   const browserBtnHandler = () => {
     setCopiedValue(
-      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5`
+      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}`
     );
     setValueToShow(
-      "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}`
     );
     setBtnActive({
       browser: true,
@@ -56,7 +58,7 @@ const CodeShower = (e) => {
 
   const curlBtnHandler = () => {
     setCopiedValue(
-      `curl "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5" `
+      `curl "https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}" `
     );
     setValueToShow(<CurlValueReview />);
     setBtnActive({
@@ -72,7 +74,7 @@ const CodeShower = (e) => {
     setCopiedValue(`import requests
 
     headers = { 
-      "apikey": "6e97db3d-269c-4309-ad0a-72ffb83cc0d5"
+      "apikey": "${apiKeyStore}"
     }
     
     params = (
@@ -97,7 +99,7 @@ const CodeShower = (e) => {
       `var request = require('request');
 
       var options = { 
-        url: 'https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=6e97db3d-269c-4309-ad0a-72ffb83cc0d5' 
+        url: 'https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}' 
       };
       
       function callback(error, response, body) {
@@ -133,7 +135,7 @@ const CodeShower = (e) => {
       curl_setopt($ch, CURLOPT_URL, "https://lit-chamber-70662.herokuapp.com/v1/review?" . http_build_query($data));
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
           "Content-Type: application/json",
-          "apikey: 6e97db3d-269c-4309-ad0a-72ffb83cc0d5",  
+          "apikey: ${apiKeyStore}",  
       ));
       
       $response = curl_exec($ch);
