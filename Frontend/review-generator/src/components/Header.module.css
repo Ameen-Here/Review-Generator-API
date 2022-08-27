@@ -5,11 +5,6 @@
   padding: 0.5px 12%;
 }
 
-.header nav {
-  display: flex;
-  justify-content: space-between;
-}
-
 .header ul {
   list-style: none;
   display: flex;
