@@ -13,7 +13,7 @@ const ApiCount = (props) => {
         return res.json();
       })
       .then((value) => {
-        localStorage.setItem("count", value.body);
+        // localStorage.setItem("count", value.body);
         setNoOfCount(value.body);
       });
   }, []);

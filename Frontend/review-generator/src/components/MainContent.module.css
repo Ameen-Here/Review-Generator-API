@@ -31,6 +31,10 @@
   transition: all 1sec fade-in;
 }
 
+.alert a {
+  cursor: pointer;
+}
+
 .alertWarning {
   color: #9f8324;
   margin-top: 5px;
@@ -225,4 +229,31 @@
 .btnApi:hover {
   background-color: #0a6ab4;
   border-color: #0a6ab4;
+}
+
+/* Form */
+
+.form {
+  margin: 20px;
+}
+
+.form label {
+  margin-right: 10px;
+}
+
+.form input {
+  border-radius: 2px;
+  width: 30%;
+}
+
+.form button {
+  margin-top: 20px;
+  display: block;
+}
+
+.errorHelper {
+  font-size: 0.7rem;
+  margin: 0;
+  margin-top: 4px;
+  color: crimson;
 }
