@@ -4,12 +4,15 @@ import { apiActions } from "../store";
 import ApiDetails from "./ApiDetails";
 import classes from "./MainContent.module.css";
 import { useState } from "react";
+import LoadingSpinner from "./UI/LoadingSpinner";
 
 const re = /\S+@\S+\.\S+/;
 
 const ApiGetter = () => {
   const count = useSelector((state) => state.count);
   const dispatch = useDispatch();
+
+  const [showSpinner, setShowSpinner] = useState(false);
 
   const emailInpRef = useRef();
   const [errorMessage, setErrorMessage] = useState("");
@@ -27,12 +30,14 @@ const ApiGetter = () => {
   };
 
   const apiKeyGeneratorHandler = async () => {
+    setShowSpinner(true);
     await fetchData("https://lit-chamber-70662.herokuapp.com/v1/newApiKey");
+    setShowSpinner(false);
   };
 
   const emailGetApiHandler = async (e) => {
     e.preventDefault();
-
+    setShowSpinner(true);
     const emailInput = emailInpRef.current.value.trim();
 
     if (emailInput.length !== 0 && re.test(emailInput.toLowerCase())) {
@@ -43,6 +48,7 @@ const ApiGetter = () => {
     } else {
       setErrorMessage("Wrong email format. Try again.");
     }
+    setShowSpinner(false);
   };
 
   const emailInputReveal = () => {
@@ -68,7 +74,7 @@ const ApiGetter = () => {
             </div>
           )}
 
-          {emailInputField && !count && (
+          {!showSpinner && emailInputField && !count && (
             <form onSubmit={emailGetApiHandler} className={classes.form}>
               <h3>Register with your email address:</h3>
               <label>Email Address:</label>
@@ -83,7 +89,9 @@ const ApiGetter = () => {
             </form>
           )}
 
-          {!count && !emailInputField && (
+          {showSpinner && <LoadingSpinner />}
+
+          {!showSpinner && !count && !emailInputField && (
             <Fragment>
               <button
                 onClick={apiKeyGeneratorHandler}
