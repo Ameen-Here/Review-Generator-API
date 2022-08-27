@@ -21,7 +21,7 @@ const PhpValueReviews = () => {
       <span className={classes.yellowString}>"10"</span>,<br />
       &emsp;&emsp;
       <span className={classes.yellowString}>"country"</span> =&gt;{" "}
-      <span className={classes.yellowString}>"us,uk"</span>, <br />
+      <span className={classes.yellowString}>"us,gb"</span>, <br />
       &emsp;&emsp;
       <span className={classes.yellowString}>"review"</span> =&gt;{" "}
       <span className={classes.yellowString}>"good"</span>,<br />

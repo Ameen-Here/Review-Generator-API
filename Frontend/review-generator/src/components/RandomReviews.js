@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import { useState } from "react";
 import SecondCodeShower from "./SecondCodeShower";
+import { Link } from "react-scroll";
+import classes from "./RandomReview.module.css";
 
 const RandomReviews = (props) => {
   const [showDemoResponse, setShowDemoResponse] = useState(false);
@@ -15,9 +17,20 @@ const RandomReviews = (props) => {
       </h3>
       <p>
         This endpoint returns a random review with optional random name from
-        list of supporting <a href="#">countries</a>, optioanl rating
-        (Good/Average/Bad) and optional quanity whose limits are determined by
-        the user category.
+        list of supporting{" "}
+        <span className={classes.link}>
+          <Link
+            to="countryList"
+            spy={true}
+            smooth={true}
+            offset={-20}
+            duration={500}
+          >
+            countries
+          </Link>
+        </span>
+        , optioanl rating (Good/Average/Bad) and optional quanity whose limits
+        are determined by the user category.
       </p>
       <div className={props.classes.card}>
         <div className={props.classes.cardHeader}>
@@ -139,7 +152,18 @@ const RandomReviews = (props) => {
                 </td>
                 <td>
                   Format: 'country1,country2,...', gets reviews with author
-                  names from these countries. Check <a href="#">Country</a>
+                  names from these countries. Check{" "}
+                  <span className={classes.link}>
+                    <Link
+                      to="countryList"
+                      spy={true}
+                      smooth={true}
+                      offset={-20}
+                      duration={500}
+                    >
+                      countries
+                    </Link>
+                  </span>{" "}
                   section to check for supported countries.
                 </td>
               </tr>

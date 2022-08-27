@@ -22,7 +22,7 @@ const PythonValueReviews = () => {
       <span className={classes.yellowString}>"10"</span>),
       <br />
       &emsp;&emsp; (<span className={classes.yellowString}>"country"</span>,
-      <span className={classes.yellowString}>"us,uk"</span>),
+      <span className={classes.yellowString}>"us,gb"</span>),
       <br />
       &emsp;&emsp; (<span className={classes.yellowString}>"review"</span>,
       <span className={classes.yellowString}>"good"</span>)<br />

@@ -13,11 +13,11 @@ const SecondCodeShower = () => {
 
   const [copyBtnText, setCopyBtnText] = useState("Copy to Clipboard");
   const [copiedValue, setCopiedValue] = useState(
-    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
+    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
   );
 
   const [valueToShow, setValueToShow] = useState(
-    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
+    `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
   );
 
   const [btnActive, setBtnActive] = useState({
@@ -43,11 +43,11 @@ const SecondCodeShower = () => {
 
   const browserBtnHandler = () => {
     setCopiedValue(
-      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
+      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
     );
 
     setValueToShow(
-      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good`
+      `https://lit-chamber-70662.herokuapp.com/v1/review?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good`
     );
 
     setBtnActive({
@@ -61,7 +61,7 @@ const SecondCodeShower = () => {
 
   const curlBtnHandler = () => {
     setCopiedValue(
-      `curl "https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good"`
+      `curl "https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good"`
     );
     setValueToShow(<CurlValueReviews />);
     setBtnActive({
@@ -83,7 +83,7 @@ const SecondCodeShower = () => {
     
     params = (
         ("qty","10"),
-        ("country","us,uk"),
+        ("country","us,gb"),
         ("review","good")
     );
     
@@ -102,7 +102,7 @@ const SecondCodeShower = () => {
     setCopiedValue(`var request = require('request');
 
     var options = { 
-      url: 'https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,uk&review=good' 
+      url: 'https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey=${apiKeyStore}&qty=10&country=us,gb&review=good' 
     };
     
     function callback(error, response, body) {
@@ -132,7 +132,7 @@ const SecondCodeShower = () => {
       
       $data = [
         "qty" => "10",
-        "country" => "us,uk",
+        "country" => "us,gb",
         "review" => "good",
       ];
       

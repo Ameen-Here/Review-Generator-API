@@ -8,7 +8,7 @@ const CurlValueReviews = () => {
       curl&emsp;
       <span className={classes.yellowString}>
         "https://lit-chamber-70662.herokuapp.com/v1/reviews?apiKey={apiKeyStore}
-        &qty=10&country=us,uk&review=good"
+        &qty=10&country=us,gb&review=good"
       </span>
     </div>
   );
