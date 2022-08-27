@@ -10,7 +10,9 @@ const RandomReviews = (props) => {
   };
   return (
     <Fragment>
-      <h3>Random Reviews with optional (Names/Rating/Quantity)</h3>
+      <h3 id="randomReviews">
+        Random Reviews with optional (Names/Rating/Quantity)
+      </h3>
       <p>
         This endpoint returns a random review with optional random name from
         list of supporting <a href="#">countries</a>, optioanl rating

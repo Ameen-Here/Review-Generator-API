@@ -1,14 +1,16 @@
 .sideNav {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .sideNav ul {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .sideNav li {
   padding: 5px 0;
+  margin-bottom: 10px;
+  line-height: 20px;
 }
 
 .sideNav h3 {
@@ -24,4 +26,8 @@
 
 .sideNav a:hover {
   color: #00f;
+}
+
+.sideNavList {
+  cursor: pointer;
 }
