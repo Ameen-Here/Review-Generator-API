@@ -5,7 +5,9 @@ import SideNav from "./SideNav";
 const Main = () => {
   return (
     <main id={styles.main}>
-      <SideNav />
+      <div id={styles.sideNav}>
+        <SideNav />
+      </div>
       <MainContent />
     </main>
   );
