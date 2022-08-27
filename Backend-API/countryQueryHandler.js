@@ -52,7 +52,7 @@ const nameRouter = {
 
 const checkWrongCountryInput = (newString) => {
   const checkWrongInput = newString.filter(
-    (string) => !nameRouter[string.trim()]
+    (string) => !nameRouter[string.trim().toUpperCase()]
   ); // Checking if given value is existes
   if (checkWrongInput.length > 0) return false;
   return true;

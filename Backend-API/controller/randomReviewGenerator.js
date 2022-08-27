@@ -32,8 +32,11 @@ const randomReviewGenerator = async (
       if (userQueryCountry) {
         countryQuery = extractCountryName(userQueryCountry);
         if (!countryQuery) throw new Error("Wrong Country Inputs"); // Checking if input is wrong or not
-        countryQuery = countryQuery.map((string) => nameRouter[string.trim()]);
+        countryQuery = countryQuery.map(
+          (string) => nameRouter[string.trim().toUpperCase()]
+        );
       }
+      console.log(countryQuery);
       if (userQueryReview) {
         reviewQuery = extractReviewName(userQueryReview);
         if (!reviewQuery) throw new Error("Wrong Query Inputs"); // Checking if input is wrong or not
