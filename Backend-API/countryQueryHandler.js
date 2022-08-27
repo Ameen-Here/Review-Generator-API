@@ -1,41 +1,53 @@
-import asianNames from "./Resource/Names/asianNames.js";
-import europeanNames from "./Resource/Names/europeanNames.js";
 import arabNames from "./Resource/Names/arabNames.js";
-import indianNames from "./Resource/Names/indianNames.js";
+import asianNames from "./Resource/Names/asianNames.js";
 import chineeseNames from "./Resource/Names/chineeseName.js";
-
+import europeanNames from "./Resource/Names/europeanNames.js";
+import germanNames from "./Resource/Names/germanNames.js";
+import indianNames from "./Resource/Names/indianNames.js";
+import italianNames from "./Resource/Names/italianNames.js";
 import japaneeseName from "./Resource/Names/japaneeseName.js";
 import portugalNames from "./Resource/Names/portugalNames.js";
+import RussianNames from "./Resource/Names/russianNames.js";
+import spanishNames from "./Resource/Names/spanishNames.js";
+import uaeNames from "./Resource/Names/uaeNames.js";
+import UkraineNames from "./Resource/Names/ukraneNames.js";
 import ukNames from "./Resource/Names/unitedKingdomNames.js";
-import italianNames from "./Resource/Names/italianNames.js";
 import usNames from "./Resource/Names/unitedStatesNames.js";
 
 const NAME_COLLECTION = [
-  arabNames,
-  europeanNames,
-  asianNames,
-  indianNames,
-  japaneeseName,
-  chineeseNames,
-  japaneeseName,
-  portugalNames,
-  ukNames,
-  italianNames,
-  usNames,
+  arabNames, //
+  asianNames, //
+  chineeseNames, //
+  europeanNames, //
+  germanNames, //
+  indianNames, //
+  italianNames, //
+  japaneeseName, //
+  portugalNames, //
+  RussianNames, //
+  spanishNames, //
+  uaeNames, //
+  UkraineNames, //
+  ukNames, //
+  usNames, //
 ];
 
 const nameRouter = {
-  japan: japaneeseName,
-  china: asianNames,
-  europe: europeanNames,
-  middleEast: arabNames,
-  india: indianNames,
-  uk: ukNames,
-  portugal: portugalNames,
-  us: usNames,
-  italy: italianNames,
-  china: chineeseNames,
-  japan: japaneeseName,
+  JP: japaneeseName,
+  ASI: asianNames,
+  EUR: europeanNames,
+  ARAB: arabNames,
+  IN: indianNames,
+  GB: ukNames,
+  PT: portugalNames,
+  US: usNames,
+  IT: italianNames,
+  CN: chineeseNames,
+  DE: germanNames,
+  RU: RussianNames,
+  ES: spanishNames,
+  AE: uaeNames,
+  UA: UkraineNames,
 };
 
 const checkWrongCountryInput = (newString) => {
