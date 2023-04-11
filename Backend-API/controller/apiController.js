@@ -11,16 +11,16 @@ const controlApiKey = async (req, res) => {
       apiKey = await createApiKey();
       count = 25;
     }
-    res.send(successCreator({ key: apiKey, count }));
+    res.status(200).send(successCreator({ key: apiKey, count }));
   } catch (err) {
-    res.send(errorCreator(err.message));
+    res.status(300).send(errorCreator(err.message));
   }
 };
 
 export const getCount = async (req, res) => {
   const apiKey = req.query.apiKey;
   const noOfCalls = await isValidApiKey(apiKey, 0);
-  res.send(successCreator(noOfCalls));
+  res.status(200).send(successCreator(noOfCalls));
 };
 
 export default controlApiKey;

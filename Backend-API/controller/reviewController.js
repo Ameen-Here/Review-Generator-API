@@ -10,7 +10,8 @@ const getOneRandomReview = async (req, res) => {
       req.query.apiKey,
       1
     );
-    if (!noOfCalls) return res.send(errorCreator("More calls than your limit"));
+    if (!noOfCalls)
+      return res.status(300).send(errorCreator("More calls than your limit"));
     if (isApiKeyValid) {
       const { review, author, randomRating } = randomeOneReview();
 
@@ -22,9 +23,9 @@ const getOneRandomReview = async (req, res) => {
 
       return res.json(data);
     }
-    res.send(errorCreator("Invalid API Key"));
+    res.status(300).send(errorCreator("Invalid API Key"));
   } catch (err) {
-    res.send(errorCreator(err.message));
+    res.status(300).send(errorCreator(err.message));
   }
 };
 
@@ -36,7 +37,8 @@ const getRandomReview = async (req, res) => {
       reviewQty
     );
 
-    if (!noOfCalls) return res.send(errorCreator("More calls than your limit"));
+    if (!noOfCalls)
+      return res.status(300).send(errorCreator("More calls than your limit"));
     if (isApiKeyValid) {
       const countryUser = req.query.country;
       const reviewUser = req.query.review;
@@ -48,11 +50,11 @@ const getRandomReview = async (req, res) => {
       );
 
       const data = successCreator(reviewBody);
-      return res.send(data);
+      return res.status(200).send(data);
     }
-    res.send(errorCreator("Invalid API Key"));
+    res.status(300).send(errorCreator("Invalid API Key"));
   } catch (err) {
-    res.send(errorCreator(err.message));
+    res.status(300).send(errorCreator(err.message));
   }
 };
 
